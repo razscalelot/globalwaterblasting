@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
       } else {
         res.render('front/app/contactus', {
           title: 'Contact Us || Global Water Blasting',
-          message: 'The request message was already sent. Cannot send the same request message multiple times',
+          message: 'Something went wrong, Please try again',
           Data: 0,
           Status: 400,
           IsSuccess: false

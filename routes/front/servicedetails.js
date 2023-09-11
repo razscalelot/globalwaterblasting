@@ -8,15 +8,15 @@ let async = require('async');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   let serviceData = {};
   async.forEachSeries(services, (service, next_service) => {
-    if (req.query.name == service.serviceslug){
+    if (req.query.name == service.serviceslug) {
       serviceData = service;
     }
     next_service();
   });
-  if (req.query.status == 'true'){
+  if (req.query.status == 'true') {
     res.render('front/app/servicedetails', {
       title: 'Service Details || Global Water Blasting',
       message: 'Your message has been successfully sent. We will contact you very soon!',
@@ -24,8 +24,17 @@ router.get('/', function(req, res, next) {
       serviceData: serviceData,
       Status: 200,
       IsSuccess: true
-    });    
-  }else if(req.query.status == 'false'){
+    });
+  } else if (req.query.status == 'false') {
+    res.render('front/app/servicedetails', {
+      title: 'Service Details || Global Water Blasting',
+      message: 'Something went wrong, Please try again',
+      Data: 0,
+      serviceData: serviceData,
+      Status: 400,
+      IsSuccess: false
+    });
+  } else if (req.query.status == 'existing') {
     res.render('front/app/servicedetails', {
       title: 'Service Details || Global Water Blasting',
       message: 'The request message was already sent. Cannot send the same request message multiple times',
@@ -35,7 +44,17 @@ router.get('/', function(req, res, next) {
       IsSuccess: false
     });
   }
-  else{
+  else if (req.query.status == 'blank') {
+    res.render('front/app/servicedetails', {
+      title: 'Service Details || Global Water Blasting',
+      message: 'Invalid name, email, mobile, address, select service and message can not be empty, please try again',
+      Data: 0,
+      serviceData: serviceData,
+      Status: 400,
+      IsSuccess: false
+    });
+  }
+  else {
     res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData });
   }
 });
@@ -56,27 +75,15 @@ router.post('/', async (req, res) => {
       }
       let insertedData = await primary.model(constants.MODELS.quotes, quoteModel).create(obj)
       if (insertedData && insertedData != null) {
-        res.redirect('/servicedetails?name=' + redirect + '&status=true', );
+        res.redirect('/servicedetails?name=' + redirect + '&status=true');
       } else {
-        res.redirect('/servicedetails?name=' + redirect + '&status=false', );
+        res.redirect('/servicedetails?name=' + redirect + '&status=false');
       }
     } else {
-      res.render('/servicedetails?name=' + redirect, {
-        title: 'Service Details || Global Water Blasting',
-        message: 'The request message was already sent. Cannot send the same request message multiple times',
-        Data: 0,
-        Status: 400,
-        IsSuccess: false
-      });
+      res.redirect('/servicedetails?name=' + redirect + '&status=existing');
     }
   } else {
-    res.render('/servicedetails?name=' + redirect, {
-      title: 'Service Details || Global Water Blasting',
-      message: 'Invalid name, email, mobile, address, select service and message can not be empty, please try again',
-      Data: 0,
-      Status: 400,
-      IsSuccess: false
-    });
+    res.redirect('/servicedetails?name=' + redirect + '&status=blank');
   }
 });
 
