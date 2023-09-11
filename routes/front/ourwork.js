@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
     } else {
       res.render('front/app/ourwork', {
         title: 'Our Work || Global Water Blasting',
-        message: 'The request message was already sent. Cannot send the same request message multiple times',
+        message: 'The request message was already sent. We will contact you very soon!',
         Data: 0,
         Status: 400,
         IsSuccess: false

@@ -37,7 +37,7 @@ router.get('/', function (req, res, next) {
   } else if (req.query.status == 'existing') {
     res.render('front/app/servicedetails', {
       title: 'Service Details || Global Water Blasting',
-      message: 'The request message was already sent. Cannot send the same request message multiple times',
+      message: 'The request message was already sent. We will contact you very soon!',
       Data: 0,
       serviceData: serviceData,
       Status: 400,
