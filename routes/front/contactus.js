@@ -8,7 +8,7 @@ let async = require('async');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('front/app/contactus', { title: 'Contact Us || Global Water Blasting', message: req.flash('message') });
+  res.render('front/app/contactus', { title: 'Contact Us || Global Water Blasting', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
 });
 
 router.post('/', async (req, res) => {

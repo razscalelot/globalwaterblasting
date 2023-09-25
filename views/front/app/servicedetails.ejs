@@ -3,7 +3,7 @@
     <div class="wrapper">
         <div class="w-full rounded-2xl overflow-hidden mb-5 md:mb-6 lg:mb-8" data-aos="zoom-in"
             data-aos-duration="1500">
-            <img src="<%= serviceData.banner %>" alt="Services" class="min-h-[250px] w-full" />
+            <img src="<%= AWS_BUCKET_URI %><%= serviceData.banner %>" alt="Services" class="min-h-[250px] w-full" />
         </div>
         <div class="w-full space-y-3 sm:space-y-3.5 md:space-y-4 lg:space-y-5">
             <div class="w-full space-y-1 sm:space-y-2 md:space-y-3">
@@ -18,8 +18,8 @@
             data-aos-duration="1500">
             <div class="image-container">
                 <% serviceData.images.forEach((image)=> { %>
-                    <img class="image-before slider-image max-w-full" src="<%= image.before %>" alt="Before Service" />
-                    <img class="image-after slider-image max-w-full" src="<%= image.after %>" alt="After Service" />
+                    <img class="image-before slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= image.before %>" alt="Before Service" />
+                    <img class="image-after slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= image.after %>" alt="After Service" />
                     <% }); %>
             </div>
             <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown"

@@ -12,9 +12,9 @@ router.get('/', async (req, res) => {
   let primary = mongoConnection.useDb(constants.DEFAULT_DB);
   let serviceData = await primary.model(constants.MODELS.services, serviceModel).findOne({serviceslug: req.query.name}).lean();
   if (serviceData && serviceData != null) {
-    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message') });
+    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
   } else {
-    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message') });
+    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
   }
 });
 
