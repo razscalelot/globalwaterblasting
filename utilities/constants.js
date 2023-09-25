@@ -3,7 +3,8 @@ let constants = {
     MODELS: {
         contactus: 'contactus',
         quotes: 'quotes',
-        offers: 'offers'
+        offers: 'offers',
+        services: 'services'
     }
 };
 module.exports = constants;

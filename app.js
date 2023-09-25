@@ -11,6 +11,7 @@ var multer = require('multer');
 var fs = require('fs');
 let mongoose = require("mongoose");
 var expressLayouts = require('express-ejs-layouts');
+var flush = require('connect-flash');
 // const adminpaths = [
 //   { pathUrl: '/', routeFile: 'login'},
 //   { pathUrl: '/dashboard', routeFile: 'dashboard'},
@@ -36,6 +37,7 @@ app.use(
         saveUninitialized: true
     })
 );
+app.use(flush());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);

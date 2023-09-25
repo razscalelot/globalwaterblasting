@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
-const services = require("../../services");
+const mongoConnection = require('../../utilities/connections');
+const constants = require('../../utilities/constants');
+const serviceModel = require('../../models/services.model');
+
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('front/app/services', { title: 'Services || Global Water Blasting', services: services });
+router.get('/', async (req, res) => {
+    let primary = mongoConnection.useDb(constants.DEFAULT_DB);
+    let services = await primary.model(constants.MODELS.services, serviceModel).find({}).lean();
+    res.render('front/app/services', { title: 'Services || Global Water Blasting', services: services, message: req.flash('message') });
 });
 
 module.exports = router;

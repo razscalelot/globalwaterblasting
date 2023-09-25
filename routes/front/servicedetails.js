@@ -3,59 +3,18 @@ var router = express.Router();
 const mongoConnection = require('../../utilities/connections');
 const constants = require('../../utilities/constants');
 const quoteModel = require("../../models/quotes.model");
-const services = require("../../services");
+const serviceModel = require("../../models/services.model");
 let async = require('async');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  let serviceData = {};
-  async.forEachSeries(services, (service, next_service) => {
-    if (req.query.name == service.serviceslug) {
-      serviceData = service;
-    }
-    next_service();
-  });
-  if (req.query.status == 'true') {
-    res.render('front/app/servicedetails', {
-      title: 'Service Details || Global Water Blasting',
-      message: 'Your message has been successfully sent. We will contact you very soon!',
-      Data: 0,
-      serviceData: serviceData,
-      Status: 200,
-      IsSuccess: true
-    });
-  } else if (req.query.status == 'false') {
-    res.render('front/app/servicedetails', {
-      title: 'Service Details || Global Water Blasting',
-      message: 'Something went wrong, Please try again',
-      Data: 0,
-      serviceData: serviceData,
-      Status: 400,
-      IsSuccess: false
-    });
-  } else if (req.query.status == 'existing') {
-    res.render('front/app/servicedetails', {
-      title: 'Service Details || Global Water Blasting',
-      message: 'The request message was already sent. We will contact you very soon!',
-      Data: 0,
-      serviceData: serviceData,
-      Status: 400,
-      IsSuccess: false
-    });
-  }
-  else if (req.query.status == 'blank') {
-    res.render('front/app/servicedetails', {
-      title: 'Service Details || Global Water Blasting',
-      message: 'Invalid name, email, mobile, address, select service and message can not be empty, please try again',
-      Data: 0,
-      serviceData: serviceData,
-      Status: 400,
-      IsSuccess: false
-    });
-  }
-  else {
-    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData });
+router.get('/', async (req, res) => {
+  let primary = mongoConnection.useDb(constants.DEFAULT_DB);
+  let serviceData = await primary.model(constants.MODELS.services, serviceModel).findOne({serviceslug: req.query.name}).lean();
+  if (serviceData && serviceData != null) {
+    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message') });
+  } else {
+    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message') });
   }
 });
 
@@ -75,15 +34,19 @@ router.post('/', async (req, res) => {
       }
       let insertedData = await primary.model(constants.MODELS.quotes, quoteModel).create(obj)
       if (insertedData && insertedData != null) {
-        res.redirect('/servicedetails?name=' + redirect + '&status=true');
+        req.flash('message', 'Your message has been successfully sent. We will contact you very soon!');
+        res.redirect('/servicedetails?name=' + redirect);
       } else {
-        res.redirect('/servicedetails?name=' + redirect + '&status=false');
+        req.flash('message', 'Something went wrong, Please try again');
+        res.redirect('/servicedetails?name=' + redirect);
       }
     } else {
-      res.redirect('/servicedetails?name=' + redirect + '&status=existing');
+      req.flash('message', 'The request message was already sent. We will contact you very soon!');
+      res.redirect('/servicedetails?name=' + redirect);
     }
   } else {
-    res.redirect('/servicedetails?name=' + redirect + '&status=blank');
+    req.flash('message', 'Invalid name, email, mobile, address, select service and message can not be empty, please try again');
+    res.redirect('/servicedetails?name=' + redirect);
   }
 });
 

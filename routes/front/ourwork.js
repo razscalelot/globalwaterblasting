@@ -8,7 +8,7 @@ let async = require('async');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('front/app/ourwork', { title: 'Our Work || Global Water Blasting' });
+  res.render('front/app/ourwork', { title: 'Our Work || Global Water Blasting', message: req.flash('message') });
 });
 
 router.post('/', async (req, res) => {
@@ -27,39 +27,19 @@ router.post('/', async (req, res) => {
       }
       let insertedData = await primary.model(constants.MODELS.offers, offerModel).create(obj)
       if (insertedData && insertedData != null) {
-        res.render('front/app/ourwork', {
-          title: 'Our Work || Global Water Blasting',
-          message: 'Your message has been successfully sent. We will contact you very soon!',
-          Data: 0,
-          Status: 200,
-          IsSuccess: true
-        });
+        req.flash('message', 'Your message has been successfully sent. We will contact you very soon!');
+        res.redirect('/ourwork');
       } else {
-        res.render('front/app/ourwork', {
-          title: 'Our Work || Global Water Blasting',
-          message: 'Something went wrong, Please try again',
-          Data: 0,
-          Status: 400,
-          IsSuccess: false
-        });
+        req.flash('message', 'Something went wrong, Please try again');
+        res.redirect('/ourwork');
       }
     } else {
-      res.render('front/app/ourwork', {
-        title: 'Our Work || Global Water Blasting',
-        message: 'The request message was already sent. We will contact you very soon!',
-        Data: 0,
-        Status: 400,
-        IsSuccess: false
-      });
+      req.flash('message', 'The request message was already sent. We will contact you very soon!');
+      res.redirect('/ourwork');
     }
   } else {
-    res.render('front/app/ourwork', {
-      title: 'Our Work || Global Water Blasting',
-      message: 'Invalid name, email, mobile, address, postcode and message can not be empty, please try again',
-      Data: 0,
-      Status: 400,
-      IsSuccess: false
-    });
+    req.flash('message', 'Invalid name, email, mobile, address, postcode and message can not be empty, please try again');
+    res.redirect('/ourwork');
   }
 });
 
