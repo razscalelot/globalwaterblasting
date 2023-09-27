@@ -17,10 +17,8 @@
         <div class="w-full max-w-[730px] container my-5 sm:my-6 md:my-8 lg:my-10" data-aos="fade-left"
             data-aos-duration="1500">
             <div class="image-container">
-                <% serviceData.images.forEach((image)=> { %>
-                    <img ng-repeat="image in serviceData.images" class="image-before slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= image.before %>" alt="Before Service" />
-                    <img class="image-after slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= image.after %>" alt="After Service" />
-                <% }); %>
+                <img class="image-before slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= serviceData.images.before %>" alt="Before Service" />
+                <img class="image-after slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= serviceData.images.after %>" alt="After Service" />                    
             </div>
             <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown"
                 class="slider" />
@@ -55,7 +53,7 @@
                             <%= serviceData.servicedetails.points.ptitle %>
                         </h4>
                         <p class="p1 opacity-70">
-                            <%= serviceData.servicedetails.points.ptitle %>
+                            <%= serviceData.servicedetails.points.desc %>
                         </p>
                     </li>
             </ul>

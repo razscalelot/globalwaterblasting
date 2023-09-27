@@ -1,6 +1,5 @@
-app.controller("serviceController", ($scope, $http,) => {
+app.controller("contactusController", ($scope, $http,) => {
     $scope.onContact = function () {
         console.log("scope", $scope.name, $scope.email, $scope.mobile, $scope.address, $scope.postcode, $scope.massage);
-       
     };
 });
