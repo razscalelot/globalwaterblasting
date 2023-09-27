@@ -48,14 +48,16 @@
                 <%= serviceData.servicedetails.longdesc %>
             </div>
             <ul class="list-disc space-y-3 sm:space-y-4 lg:space-y-6 pl-6 lg:pl-8">
+                <% serviceData.servicedetails.points.forEach((point)=> { %>
                     <li class="w-full marker:text-primary marker:text-xl sm:marker:text-2xl lg:marker:text-3xl">
                         <h4 class="text-primary">
-                            <%= serviceData.servicedetails.points.ptitle %>
+                            <%= point.title %>
                         </h4>
                         <p class="p1 opacity-70">
-                            <%= serviceData.servicedetails.points.desc %>
+                            <%= point.description %>
                         </p>
                     </li>
+                    <% }) %>
             </ul>
         </div>
         <div class="w-full mt-5">
