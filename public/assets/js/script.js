@@ -97,7 +97,7 @@ var swiper = new Swiper(".mySwiper2", {
     clickable: true,
   },
   autoplay:{
-    reverseDirection:true,
+    reverseDirection:false,
   },
   navigation: {
     nextEl: '.next',
@@ -127,7 +127,8 @@ var swiper = new Swiper(".mySwiper3", {
   //   clickable: true,
   // },
   autoplay:{
-    reverseDirection:true,
+    delay: 1500,
+    reverseDirection:false,
   },
   // navigation: {
   //   nextEl: '.next',
@@ -156,10 +157,6 @@ document.querySelector('.slider').addEventListener('input', (e) => {
 })
 
 // Slider change Images
-var houseCleaningAfterImagesArr = ['assets/images/service-after.jpg','assets/images/roofWashing1.jpg']
-var houseCleaningBeforeImagesArr = ['assets/images/service-before.jpg','assets/images/roofWashing2.jpg',]
-var fenceafterImagesArr = ['assets/images/service-before.jpg','assets/images/service-after.jpg','assets/images/roofWashing2.jpg','assets/images/roofWashing1.jpg']
-var fenceBeforeImagesArr = ['assets/images/service-before.jpg','assets/images/service-after.jpg','assets/images/roofWashing2.jpg','assets/images/roofWashing1.jpg']
 
 function AfterBefore(Services,index){
   if(Services == house_cliening){
@@ -169,7 +166,6 @@ function AfterBefore(Services,index){
     }
   }
 }
-
 
 var houseServices1 = 'assets/images/service-before.jpg';
 var houseServices2 = 'assets/images/service-after.jpg';

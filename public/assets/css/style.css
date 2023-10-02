@@ -1259,6 +1259,10 @@ p {
   right: 0px;
 }
 
+.right-1 {
+  right: 0.25rem;
+}
+
 .right-5 {
   right: 1.25rem;
 }
@@ -1277,10 +1281,6 @@ p {
 
 .top-8 {
   top: 2rem;
-}
-
-.top-\[calc\(100vh-70px\)\] {
-  top: calc(100vh - 70px);
 }
 
 .top-full {
@@ -1317,10 +1317,6 @@ p {
 
 .-m-3 {
   margin: -0.75rem;
-}
-
-.-m-5 {
-  margin: -1.25rem;
 }
 
 .-mx-1 {
@@ -1390,10 +1386,6 @@ p {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mt-2\.5 {
-  margin-top: 0.625rem;
 }
 
 .mt-3 {
@@ -1502,6 +1494,15 @@ p {
 
 .h-\[450px\] {
   height: 450px;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .h-full {
@@ -1736,11 +1737,6 @@ p {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-x-full {
-  --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .translate-y-4 {
   --tw-translate-y: 1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1753,6 +1749,22 @@ p {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
 }
 
 .cursor-pointer {
@@ -1803,6 +1815,10 @@ p {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .gap-3 {
@@ -2011,6 +2027,10 @@ p {
   background-color: rgb(0 0 0 / 0.4);
 }
 
+.bg-black\/70 {
+  background-color: rgb(0 0 0 / 0.7);
+}
+
 .bg-cyan {
   --tw-bg-opacity: 1;
   background-color: rgb(0 178 233 / var(--tw-bg-opacity));
@@ -2019,11 +2039,6 @@ p {
 .bg-green-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
-}
-
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
 .bg-medium-persian-blue {
@@ -2122,6 +2137,10 @@ p {
   stroke-width: 2;
 }
 
+.stroke-\[5px\] {
+  stroke-width: 5px;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -2200,11 +2219,6 @@ p {
   padding-bottom: 2.5rem;
 }
 
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -2213,11 +2227,6 @@ p {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
 }
 
 .py-3 {
@@ -2267,16 +2276,16 @@ p {
   padding-left: 1.5rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
 .pr-0 {
   padding-right: 0px;
 }
 
 .pr-10 {
   padding-right: 2.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .pt-1 {
@@ -2402,6 +2411,10 @@ p {
   letter-spacing: -0.05em;
 }
 
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
 .text-dark {
   --tw-text-opacity: 1;
   color: rgb(37 37 37 / var(--tw-text-opacity));
@@ -2410,11 +2423,6 @@ p {
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.text-green-100 {
-  --tw-text-opacity: 1;
-  color: rgb(220 252 231 / var(--tw-text-opacity));
 }
 
 .text-green-500 {
@@ -2495,15 +2503,6 @@ p {
   line-height: 1.875rem;
 }
 
-.marker\:text-xs *::marker {
-  font-size: .75rem;
-  line-height: 1.2rem;
-}
-
-.marker\:text-black\/70 *::marker {
-  color: rgb(0 0 0 / 0.7);
-}
-
 .marker\:text-primary *::marker {
   color: rgb(0 54 135 );
 }
@@ -2511,15 +2510,6 @@ p {
 .marker\:text-xl::marker {
   font-size: 1.25rem;
   line-height: 1.875rem;
-}
-
-.marker\:text-xs::marker {
-  font-size: .75rem;
-  line-height: 1.2rem;
-}
-
-.marker\:text-black\/70::marker {
-  color: rgb(0 0 0 / 0.7);
 }
 
 .marker\:text-primary::marker {
@@ -2625,6 +2615,10 @@ p {
 }
 
 @media (min-width: 640px) {
+  .sm\:bottom-14 {
+    bottom: 3.5rem;
+  }
+
   .sm\:left-10 {
     left: 2.5rem;
   }
@@ -2635,6 +2629,10 @@ p {
 
   .sm\:right-10 {
     right: 2.5rem;
+  }
+
+  .sm\:right-5 {
+    right: 1.25rem;
   }
 
   .sm\:right-\[95\%\] {
@@ -2675,8 +2673,8 @@ p {
     width: 50%;
   }
 
-  .sm\:max-w-\[150px\] {
-    max-width: 150px;
+  .sm\:max-w-\[180px\] {
+    max-width: 180px;
   }
 
   .sm\:max-w-full {
@@ -2715,6 +2713,12 @@ p {
     margin-bottom: calc(1rem * var(--tw-space-y-reverse));
   }
 
+  .sm\:space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+  }
+
   .sm\:p-2 {
     padding: 0.5rem;
   }
@@ -2746,6 +2750,10 @@ p {
     padding-bottom: 3rem;
   }
 
+  .sm\:pr-4 {
+    padding-right: 1rem;
+  }
+
   .sm\:pt-14 {
     padding-top: 3.5rem;
   }
@@ -2756,10 +2764,6 @@ p {
 
   .sm\:pt-44 {
     padding-top: 11rem;
-  }
-
-  .sm\:text-left {
-    text-align: left;
   }
 
   .sm\:text-28 {
@@ -2985,6 +2989,10 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -3094,11 +3102,6 @@ p {
   .md\:py-2\.5 {
     padding-top: 0.625rem;
     padding-bottom: 0.625rem;
-  }
-
-  .md\:py-28 {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
   }
 
   .md\:py-5 {
@@ -3240,6 +3243,10 @@ p {
 
   .lg\:h-80 {
     height: 20rem;
+  }
+
+  .lg\:h-\[400px\] {
+    height: 400px;
   }
 
   .lg\:max-h-full {
@@ -3426,11 +3433,6 @@ p {
     padding-bottom: 5rem;
   }
 
-  .lg\:py-32 {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
-
   .lg\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -3547,10 +3549,6 @@ p {
     margin-bottom: 1.5rem;
   }
 
-  .xl\:ml-7 {
-    margin-left: 1.75rem;
-  }
-
   .xl\:ml-auto {
     margin-left: auto;
   }
@@ -3565,10 +3563,6 @@ p {
 
   .xl\:mt-14 {
     margin-top: 3.5rem;
-  }
-
-  .xl\:mt-5 {
-    margin-top: 1.25rem;
   }
 
   .xl\:mt-6 {
@@ -3589,6 +3583,10 @@ p {
 
   .xl\:h-6 {
     height: 1.5rem;
+  }
+
+  .xl\:h-\[450px\] {
+    height: 450px;
   }
 
   .xl\:w-12 {
@@ -3725,11 +3723,6 @@ p {
     padding-bottom: 6rem;
   }
 
-  .xl\:py-36 {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
-  }
-
   .xl\:pb-24 {
     padding-bottom: 6rem;
   }
@@ -3777,6 +3770,11 @@ p {
     line-height: 2.875rem;
   }
 
+  .xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 3.625rem;
+  }
+
   .xl\:text-\[66px\] {
     font-size: 66px;
   }
@@ -3797,6 +3795,10 @@ p {
 
   .\32xl\:right-\[100\%\] {
     right: 100%;
+  }
+
+  .\32xl\:h-\[500px\] {
+    height: 500px;
   }
 
   .\32xl\:text-\[76px\] {

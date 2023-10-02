@@ -1,4 +1,5 @@
-<footer class="w-full bg-medium-persian-blue/10">
+<script src="/javascripts/controllers/service.controller.js"></script>
+<footer class="w-full bg-medium-persian-blue/10"  ng-controller="serviceController">
     <div class="wrapper py-10 lg:py-14 xl:py-20">
         <div class="flex flex-wrap -m-5">
             <div class="w-full md:w-5/12 lg:w-4/12 py-3 px-5" data-aos="fade-down" data-aos-duration="1000">
@@ -62,20 +63,8 @@
                     <div class="w-full sm:w-1/2 xl:w-3/12 py-3 px-5" data-aos="fade-up" data-aos-duration="1000">
                         <p class="footer_m_titel">Services</p>
                         <ul class="mt-2 md:mt-3 lg:mt-8 space-y-2.5 md:space-y-3.5 text-sm">
-                            <li>
-                                <a class="footer_menu" href="#">House Wash</a>
-                            </li>
-                            <li>
-                                <a class="footer_menu" href="#">Fence Cleaning</a>
-                            </li>
-                            <li>
-                                <a class="footer_menu" href="#">Driveway Wash</a>
-                            </li>
-                            <li>
-                                <a class="footer_menu" href="#">Roof Cleaning</a>
-                            </li>
-                            <li>
-                                <a class="footer_menu" href="#">Gutter Cleaning</a>
+                            <li ng-repeat="service in services">
+                                <a class="footer_menu" href="/servicedetails?name={{service.serviceslug}}">{{service.servicename}}</a>
                             </li>
                         </ul>
                     </div>
@@ -144,10 +133,30 @@
         </div>
     </div>
 </footer>
-<% if (message.length > 0) {%>
+<!-- Call us [S] -->
+<a href="tel:+64223514444"
+    class="animate-bounce fixed bottom-0 sm:bottom-14 right-1 sm:right-5 flex items-center justify-around rounded-md bg-primary text-white z-50 cursor-pointer pr-2 sm:pr-4">
+    <span
+        class="w-10 md:w-12 lg:w-14 h-10 md:h-12 lg:h-14 flex items-center justify-center rounded-lg bg-primary text-white outline-none">
+        <svg class="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg" version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0"
+            viewBox="0 0 384 384" style="enable-background:new 0 0 512 512" xml:space="preserve">
+            <g>
+                <path
+                    d="M353.188 252.052c-23.51 0-46.594-3.677-68.469-10.906-10.719-3.656-23.896-.302-30.438 6.417l-43.177 32.594c-50.073-26.729-80.917-57.563-107.281-107.26l31.635-42.052c8.219-8.208 11.167-20.198 7.635-31.448-7.26-21.99-10.948-45.063-10.948-68.583C132.146 13.823 118.323 0 101.333 0h-70.52C13.823 0 0 13.823 0 30.813 0 225.563 158.438 384 353.188 384c16.99 0 30.813-13.823 30.813-30.813v-70.323c-.001-16.989-13.824-30.812-30.813-30.812z">
+                </path>
+            </g>
+        </svg>
+    </span>
+    <span class="relative block tracking-wider text-white anim">+64223514444</span>
+</a>
+<!-- Call us [E] -->
+<% if (message.length> 0) {%>
     <div id="denideMassage" class="w-full fixed right-0 top-0 anim z-[999]">
         <div class="bg-primary border border-blue-400 text-white px-4 py-3 rounded relative" role="alert">
-            <strong class="font-bold text-white"><%= message %></strong>
+            <strong class="font-bold text-white">
+                <%= message %>
+            </strong>
             <button class="absolute top-0 bottom-0 right-0 px-4 py-3"
                 onclick="addActive('denideMassage','-translate-y-full')">
                 <svg class="fill-current h-6 w-6 text-white" role="button" xmlns="http://www.w3.org/2000/svg"
@@ -160,10 +169,10 @@
         </div>
     </div>
     <% } %>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="assets/js/script.js"></script>
-</body>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="assets/js/script.js"></script>
+        </body>
 
-</html>
+        </html>
