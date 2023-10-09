@@ -3809,27 +3809,3 @@ p {
     line-height: 90px;
   }
 }
-.h-\[500px\] {
-  height: 500px;
-}
-
-@media (min-width: 1024px) {
-  .lg\:h-\[400px\] {
-     height: 400px;
-   }
-}
-
-@media (min-width: 1280px) {
-  .xl\:h-\[450px\] {
-     height: 450px;
-   }
-}
-
-@media (min-width: 1536px) {
-   .\32xl\:h-\[500px\] {
-     height: 500px;
-   }
-}
-.w-full{
-  width:100%;
-}
