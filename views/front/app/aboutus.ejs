@@ -1,3 +1,4 @@
+<script src="/javascripts/controllers/service.controller.js"></script>
 <!-- About Us Banner- [S] -->
 <section class="relative w-full overflow-hidden pt-40 sm:pt-44 pb-24 md:pt-48 md:pb-28 lg:pt-56 lg:pb-44">
     <img src="assets/images/about-us-banner.png" alt="About US"
@@ -131,7 +132,7 @@
 <!-- Fast Clean Services [E] -->
 
 <!-- What you can do with global blasting water [s] -->
-<section class="w-full relative overflow-hidden pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
+<section class="w-full relative overflow-hidden pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24" ng-controller="serviceController">
     <div class="wrapper">
         <div class="max-w-6xl relative mx-auto pt-12 canDo_slider" data-aos="flip-left" data-aos-duration="1500">
             <img src="assets/images/what-you-can-do.png" alt="What You Can do With Global Water Blasting"
@@ -140,57 +141,20 @@
             <div class="max-w-5xl flex items-center justify-between xl:mt-14 mx-auto">
                 <div class="swiper mySwiper2 pt-10 pb-16 lg:pb-20 md:px-10">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="relative max-w-xs cursor-pointer group p-4 mx-auto">
-                                <div class="relative overflow-hidden rounded-2xl h-80">
-                                    <img src="assets/images/nav.png" alt="House Wash"
-                                        class="w-full h-full object-cover">
-                                    <span
-                                        class="block absolute inset-0 -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 anim bg-gradient-to-t from-[#0088CE]/70 to-transparent"></span>
+                        <div class="swiper-slide" ng-repeat="service in services">
+                            <a href="/servicedetails?name={{service.serviceslug}}" class="block">
+                                <div class="relative max-w-xs cursor-pointer group p-4 mx-auto">
+                                    <div class="relative overflow-hidden rounded-2xl h-80">
+                                        <img src="<%= AWS_BUCKET_URI %>{{service.image}}" alt="{{service.servicename}}"
+                                            class="w-full h-full object-cover">
+                                        <span
+                                            class="block absolute inset-0 -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 anim bg-gradient-to-t from-[#0088CE]/70 to-transparent"></span>
+                                    </div>
+                                    <h4
+                                        class="absolute top-full -translate-x-6 w-full text-center group-hover:top-[330px] lg:group-hover:top-[280px] xl:group-hover:top-[290px] group-hover:text-white anim z-20">
+                                        House Wash</h4>
                                 </div>
-                                <h4
-                                    class="absolute top-full -translate-x-6 w-full text-center group-hover:top-[330px] lg:group-hover:top-[280px] xl:group-hover:top-[290px] group-hover:text-white anim z-20">
-                                    House Wash</h4>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="relative max-w-xs cursor-pointer group p-4 mx-auto">
-                                <div class="relative overflow-hidden rounded-2xl h-80">
-                                    <img src="assets/images/nav 2.png" alt="Deck Wash"
-                                        class="w-full h-full object-cover">
-                                    <span
-                                        class="block absolute inset-0 -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 anim bg-gradient-to-t from-[#0088CE]/70 to-transparent"></span>
-                                </div>
-                                <h4
-                                    class="absolute top-full -translate-x-6 w-full text-center group-hover:top-[330px] lg:group-hover:top-[280px] xl:group-hover:top-[290px] group-hover:text-white anim z-20">
-                                    Deck Wash</h4>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="relative max-w-xs cursor-pointer group p-4 mx-auto">
-                                <div class="relative overflow-hidden rounded-2xl h-80">
-                                    <img src="assets/images/clran_bot.jpg" alt="Roof Wash"
-                                        class="w-full h-full object-cover">
-                                    <span
-                                        class="block absolute inset-0 -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 anim bg-gradient-to-t from-[#0088CE]/70 to-transparent"></span>
-                                </div>
-                                <h4
-                                    class="absolute top-full -translate-x-6 w-full text-center group-hover:top-[330px] lg:group-hover:top-[280px] xl:group-hover:top-[290px] group-hover:text-white anim z-20">
-                                    Roof Wash</h4>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="relative max-w-xs cursor-pointer group p-4 mx-auto">
-                                <div class="relative overflow-hidden rounded-2xl h-80">
-                                    <img src="assets/images/clran_top.jpg" alt="House Wash"
-                                        class="w-full h-full object-cover">
-                                    <span
-                                        class="block absolute inset-0 -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 anim bg-gradient-to-t from-[#0088CE]/70 to-transparent"></span>
-                                </div>
-                                <h4
-                                    class="absolute top-full -translate-x-6 w-full text-center group-hover:top-[330px] lg:group-hover:top-[280px] xl:group-hover:top-[290px] group-hover:text-white anim z-20">
-                                    House Wash</h4>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="swiper-pagination -translate-x-2.5"></div>
