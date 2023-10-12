@@ -139,7 +139,7 @@
                 class="absolute top-0 left-0 right-0 w-full min-h-[338px] -z-[1]">
             <h3 class="xl:text-4xl text-center">What You Can Do With Global Water Blasting</h3>
             <div class="max-w-5xl flex items-center justify-between xl:mt-14 mx-auto">
-                <div class="swiper mySwiper2 pt-10 pb-16 lg:pb-20 md:px-10">
+                <div class="swiper mySwiper2 pt-10 pb-16 lg:pb-24 md:px-10">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" ng-repeat="service in services">
                             <a href="/servicedetails?name={{service.serviceslug}}" class="block">
@@ -150,14 +150,15 @@
                                         <span
                                             class="block absolute inset-0 -translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 anim bg-gradient-to-t from-[#0088CE]/70 to-transparent"></span>
                                     </div>
-                                    <h4
-                                        class="absolute top-full -translate-x-6 w-full text-center group-hover:top-[330px] lg:group-hover:top-[280px] xl:group-hover:top-[290px] group-hover:text-white anim z-20">
-                                        {{service.servicename}}</h4>
+                                    <!-- <h4 class="absolute top-full translate-y-0 left-1/2 -translate-x-1/2 w-full text-center group-hover:-translate-y-5 group-hover:text-white transition-all duration-150 z-20">{{service.servicename}}</h4> -->
+                                    <!-- <h4 class="opacity-0 group-hover:opacity-100 absolute bottom-0 translate-y-0 left-1/2 -translate-x-1/2 w-full text-center xl:group-hover:-translate-y-6 group-hover:text-white anim z-20">{{service.servicename}}</h4> -->
+                                    <h4 class="absolute top-full translate-y-0 left-1/2 -translate-x-1/2 w-full text-center group-hover:-translate-y-5 group-hover:text-white transition-all duration-150 z-20">{{service.servicename}}</h4>
+                                    <h4 class="opacity-0 group-hover:opacity-100 absolute bottom-0 translate-y-0 left-1/2 -translate-x-1/2 w-full text-center group-hover:-translate-y-6 group-hover:text-white anim z-20">{{service.servicename}}</h4>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-pagination -translate-x-2.5"></div>
+                    <div class="swiper-pagination translate-y-4"></div>
                 </div>
             </div>
             <div class="next absolute top-1/2 -translate-y-1/2 left-0 sm:left-10 md:left-0 xl:-translate-x-[150%] z-20">
