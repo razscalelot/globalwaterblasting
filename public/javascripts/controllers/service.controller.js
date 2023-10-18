@@ -8,7 +8,6 @@ app.controller("serviceController", ($scope, $http,) => {
             function (response) {
                 if (response.data.IsSuccess == true && response.data.Data != 0) {
                     $scope.services = response.data.Data;
-                    console.log("$scope.services", $scope.services);
                 } else {
                     console.log("response", response);
                 }
