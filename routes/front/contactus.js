@@ -8,7 +8,26 @@ let async = require('async');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('front/app/contactus', { title: 'Contact Us || Global Water Blasting', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
+  let seo = {
+    title: 'Contact- Global Water Blasting',
+    description: 'Contact Global water blasting: Mon - Thu: 9 am - 5 pm, Weekend: 10 am - 3 pm. Entire Auckland region | +64223514444 | globalwaterblasting@gmail.com.!',
+    canonical: 'https://globalwaterblasting.co.nz/contactus',
+    ogtype: 'article',
+    ogtitle: 'Contact- Global Water Blasting',
+    ogurl: 'https://globalwaterblasting.co.nz/contactus',
+    ogimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
+    ogdescription: 'Contact Global water blasting: Mon - Thu: 9 am - 5 pm, Weekend: 10 am - 3 pm. Entire Auckland region | +64223514444 | globalwaterblasting@gmail.com',
+    articleauthor: 'globalwaterblasting.co.nz',
+    articlemodified_time: '2022-08-11T16:21+12:00',
+    articletag: 'Globalwaterblastinglogo',
+    twittercard: 'summary',
+    twittersite: '@https://globalwaterblasting.co.nz/contactus',
+    twittertitle: 'Contact- Global Water Blasting',
+    twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
+    twitterdescription: 'Contact Global water blasting: Mon - Thu: 9 am - 5 pm, Weekend: 10 am - 3 pm. Entire Auckland region | +64223514444 | globalwaterblasting@gmail.com',
+    twitterimagealt: 'Globalwaterblastinglogo'
+  }
+  res.render('front/app/contactus', { seo: seo, title: 'Contact Us || Global Water Blasting', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
 });
 
 router.post('/', async (req, res) => {

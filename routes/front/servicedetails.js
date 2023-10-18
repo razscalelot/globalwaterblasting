@@ -10,9 +10,28 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', async (req, res) => {
   let primary = mongoConnection.useDb(constants.DEFAULT_DB);
-  let serviceData = await primary.model(constants.MODELS.services, serviceModel).findOne({serviceslug: req.query.name}).lean();
+  let serviceData = await primary.model(constants.MODELS.services, serviceModel).findOne({ serviceslug: req.query.name }).lean();
   if (serviceData && serviceData != null) {
-    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
+    let seo = {
+      title: serviceData.servicename + ' -Global Water Blasting NZ',
+      description: serviceData.shortdesc,
+      canonical: 'https://globalwaterblasting.co.nz/',
+      ogtype: 'website',
+      ogtitle: serviceData.servicename + ' -Global Water Blasting NZ',
+      ogurl: 'https://globalwaterblasting.co.nz/#',
+      ogimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
+      ogdescription: serviceData.shortdesc,
+      articleauthor: 'globalwaterblasting.co.nz',
+      articlemodified_time: '2022-08-11T16:21+12:00',
+      articletag: 'Globalwaterblastinglogo',
+      twittercard: 'summary',
+      twittertitle: serviceData.servicename + ' -Global Water Blasting NZ',
+      twittersite: '@https://globalwaterblasting.co.nz/#',
+      twitterdescription: serviceData.shortdesc,
+      twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
+      twitterimagealt: 'Globalwaterblastinglogo'
+    }
+    res.render('front/app/servicedetails', { seo: seo, title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
   } else {
     res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
   }
