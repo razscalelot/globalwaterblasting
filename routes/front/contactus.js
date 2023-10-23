@@ -31,7 +31,6 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', async (req, res) => {
-  console.log("req", req.body);
   let { name, email, mobile, address, postcode, message } = req.body;
   if (name && name.trim() != '' && email && email.trim() != '' && mobile && mobile != '' && address && address.trim() != '' && postcode && postcode != '') {
     let primary = mongoConnection.useDb(constants.DEFAULT_DB);
