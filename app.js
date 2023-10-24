@@ -18,24 +18,31 @@ var flush = require('connect-flash');
 //   { pathUrl: '/apps', routeFile: 'apps'}
 // ];
 const frontpaths = [
-  {pathUrl: "/", routeFile: 'index'},
-  {pathUrl: "/services", routeFile: 'services'},
-  {pathUrl: "/servicedetails", routeFile: 'servicedetails'},
-  {pathUrl: "/ourwork", routeFile: 'ourwork'},
-  {pathUrl: "/aboutus", routeFile: 'aboutus'},
-  {pathUrl: "/contactus", routeFile: 'contactus'},
+  { pathUrl: "/", routeFile: 'index' },
+  { pathUrl: "/services", routeFile: 'services' },
+  { pathUrl: "/servicedetails", routeFile: 'servicedetails' },
+  { pathUrl: "/ourwork", routeFile: 'ourwork' },
+  { pathUrl: "/aboutus", routeFile: 'aboutus' },
+  { pathUrl: "/contactus", routeFile: 'contactus' },
 ]
 var app = express();
+app.get('/sitemap', (req, res) => {
+  // const sitemap = fs.readFileSync('sitemap.xml', 'utf8')
+  // res.setHeader('Content-Type', 'text/xml');
+  // res.send(sitemap);
+  res.contentType('application/xml');
+  res.sendFile(path.join(__dirname , 'sitemap.xml'));
+});
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(cors());
 app.use(
-    session({
-        cookie: { sameSite: "lax", maxAge: oneDay },
-        resave: true,
-        secret: process.env.AUTH_KEY,
-        activeDuration: 5 * 60 * 1000,
-        saveUninitialized: true
-    })
+  session({
+    cookie: { sameSite: "lax", maxAge: oneDay },
+    resave: true,
+    secret: process.env.AUTH_KEY,
+    activeDuration: 5 * 60 * 1000,
+    saveUninitialized: true
+  })
 );
 app.use(flush());
 app.set('views', path.join(__dirname, 'views'));
@@ -63,15 +70,15 @@ mongoose.connection.once('open', () => {
 // 	app.use(path.pathUrl, require('./routes/admin/' + path.routeFile));
 // });
 frontpaths.forEach((path) => {
-	app.use(path.pathUrl, require('./routes/front/' + path.routeFile));
+  app.use(path.pathUrl, require('./routes/front/' + path.routeFile));
 });
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
-  res.render('error', {layout: false});
+  res.render('error', { layout: false });
 });
 module.exports = app;
