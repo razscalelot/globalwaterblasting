@@ -122,15 +122,14 @@
                         placeholder="Address">
                 </div>
             </div>
+
             <div class="w-full p-1 md:p-3 relative">
                 <select name="selected_service" id="choose_services"
                     class="w-full text-sm font-medium outline-none rounded-lg bg-[#F2F4F7] appearance-none py-2.5 px-5">
                     <option value="choose_services">Choose Services...</option>
-                    <option value="house_washing">House Washing</option>
-                    <option value="fence_cleaning">Fence Cleaning</option>
-                    <option value="driveway_washing">Driveway Washing</option>
-                    <option value="roof_cleaning">Roof Cleaning</option>
-                    <option value="gutter_cleaning">Gutter Cleaning</option>
+                    <% serviceName.forEach((name)=> { %>
+                    <option value="<%= name.servicename %>"><%= name.servicename %></option>
+                    <% }) %>
                 </select>
                 <div class="absolute right-5 top-1/2 -translate-y-1/2">
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

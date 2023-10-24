@@ -5,9 +5,13 @@ const mongoConnection = require('../../utilities/connections');
 const constants = require('../../utilities/constants');
 const responseManager = require('../../utilities/response.manager');
 let async = require('async');
+const Sib = require('sib-api-v3-sdk');
+const client = Sib.ApiClient.instance;
+const apiKey = client.authentications['api-key'];
+apiKey.apiKey = process.env.SIB_API_KEY;
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   let seo = {
     title: 'Our Work -Global Water Blasting NZ',
     description: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homesy!',
@@ -46,8 +50,29 @@ router.post('/', async (req, res) => {
       }
       let insertedData = await primary.model(constants.MODELS.offers, offerModel).create(obj)
       if (insertedData && insertedData != null) {
-        req.flash('message', 'Your message has been successfully sent. We will contact you very soon!');
-        res.redirect('/ourwork');
+        const tranEmailApi = new Sib.TransactionalEmailsApi()
+        const sender = {
+          email: email,
+          name: name
+        }
+        const receivers = [
+          {
+            email: process.env.SIB_EMAIL_ID,
+            name: 'Global Water Blasting'
+          },
+        ];
+        tranEmailApi.sendTransacEmail({
+          sender,
+          to: receivers,
+          subject: 'Special Offer',
+          htmlContent: `<h2>Customer Information</h2><h3> Customer Email: ` + email + `</h3><h3>Customer Mobile No.: ` + mobile + `</h3><h3>Customer Address: ` + address + ` ` + postcode + `</h3><h3>Customer Message: ` + message + `</h3>`,
+        }).then((response) => {
+          req.flash('message', 'Your message has been successfully sent. We will contact you very soon!');
+          res.redirect('/ourwork');
+        }).catch((error) => {
+          req.flash('message', error);
+          res.redirect('/ourwork');
+        });
       } else {
         req.flash('message', 'Something went wrong, Please try again');
         res.redirect('/ourwork');

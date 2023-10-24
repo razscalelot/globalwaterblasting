@@ -6,11 +6,17 @@ const quoteModel = require("../../models/quotes.model");
 const serviceModel = require("../../models/services.model");
 let async = require('async');
 var router = express.Router();
+const Sib = require('sib-api-v3-sdk');
+const client = Sib.ApiClient.instance;
+const apiKey = client.authentications['api-key'];
+apiKey.apiKey = process.env.SIB_API_KEY;
 
 /* GET home page. */
 router.get('/', async (req, res) => {
   let primary = mongoConnection.useDb(constants.DEFAULT_DB);
   let serviceData = await primary.model(constants.MODELS.services, serviceModel).findOne({ serviceslug: req.query.name }).lean();
+  let serviceName = await primary.model(constants.MODELS.services, serviceModel).find({}).select('servicename').lean();
+  console.log("serviceName", serviceName);
   if (serviceData && serviceData != null) {
     let seo = {
       title: serviceData.servicename + ' -Global Water Blasting NZ',
@@ -31,7 +37,7 @@ router.get('/', async (req, res) => {
       twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
       twitterimagealt: 'Globalwaterblastinglogo'
     }
-    res.render('front/app/servicedetails', { seo: seo, title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
+    res.render('front/app/servicedetails', { seo: seo, title: 'Service Details || Global Water Blasting', serviceName: serviceName, serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
   } else {
     res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
   }
@@ -53,8 +59,29 @@ router.post('/', async (req, res) => {
       }
       let insertedData = await primary.model(constants.MODELS.quotes, quoteModel).create(obj)
       if (insertedData && insertedData != null) {
-        req.flash('message', 'Your message has been successfully sent. We will contact you very soon!');
-        res.redirect('/servicedetails?name=' + redirect);
+        const tranEmailApi = new Sib.TransactionalEmailsApi()
+        const sender = {
+          email: email,
+          name: name
+        }
+        const receivers = [
+          {
+            email: process.env.SIB_EMAIL_ID,
+            name: 'Global Water Blasting'
+          },
+        ];
+        tranEmailApi.sendTransacEmail({
+          sender,
+          to: receivers,
+          subject: 'Service Enquiry: ' + selected_service,
+          htmlContent: `<h2>Customer Information</h2><h3> Customer Email: ` + email + `</h3><h3>Customer Mobile No.: ` + mobile + `</h3><h3>Customer Address: ` + address + `</h3><h3>Interested Service: ` + selected_service + `</h3><h3>Customer Message: ` + massage + `</h3>`,
+        }).then((response) => {
+          req.flash('message', 'Your message has been successfully sent. We will contact you very soon!');
+          res.redirect('/servicedetails?name=' + redirect);
+        }).catch((error) => {
+          req.flash('message', error);
+          res.redirect('/servicedetails?name=' + redirect);
+        });
       } else {
         req.flash('message', 'Something went wrong, Please try again');
         res.redirect('/servicedetails?name=' + redirect);
