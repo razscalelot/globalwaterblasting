@@ -27,9 +27,10 @@ const frontpaths = [
 ]
 var app = express();
 app.get('/sitemap', (req, res) => {
-  // const sitemap = fs.readFileSync('sitemap.xml', 'utf8')
-  // res.setHeader('Content-Type', 'text/xml');
-  // res.send(sitemap);
+  res.contentType('application/xml');
+  res.sendFile(path.join(__dirname , 'sitemap.xml'));
+});
+app.get('/sitemap.xml', (req, res) => {
   res.contentType('application/xml');
   res.sendFile(path.join(__dirname , 'sitemap.xml'));
 });
