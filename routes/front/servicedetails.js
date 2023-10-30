@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
   let primary = mongoConnection.useDb(constants.DEFAULT_DB);
   let serviceData = await primary.model(constants.MODELS.services, serviceModel).findOne({ serviceslug: req.query.name }).lean();
   let serviceName = await primary.model(constants.MODELS.services, serviceModel).find({}).select('servicename').lean();
-  console.log("serviceName", serviceName);
   if (serviceData && serviceData != null) {
     let seo = {
       title: serviceData.servicename + ' -Global Water Blasting NZ',
