@@ -34,6 +34,14 @@ app.get('/sitemap.xml', (req, res) => {
   res.contentType('application/xml');
   res.sendFile(path.join(__dirname , 'sitemap.xml'));
 });
+app.get('/robot', (req, res) => {
+  res.contentType('text/plain');
+  res.sendFile(path.join(__dirname , 'robot.txt'));
+});
+app.get('/robot.txt', (req, res) => {
+  res.contentType('text/plain');
+  res.sendFile(path.join(__dirname , 'robot.txt'));
+});
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(cors());
 app.use(
