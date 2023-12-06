@@ -1,34 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- if(page == 'aboutus') { %> 
+        <!-- Schema For Local Business -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Globalwaterblasting",
+              "image": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "@id": "",
+              "url": "https://globalwaterblasting.co.nz/aboutus",
+              "telephone": "+64223514444",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "",
+                "addressLocality": "Auckland",
+                "postalCode": "",
+                "addressCountry": "NZ"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -36.85475240366382,
+                "longitude": 174.77134142298442
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday"
+                ],
+                "opens": "08:00",
+                "closes": "17:00"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ] 
+            }
+        </script>
+        <!-- Schema For Organization -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Globalwaterblasting",
+              "alternateName": "globallawnmowing.co.nz",
+              "url": "https://globalwaterblasting.co.nz/aboutus",
+              "logo": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+64223514444",
+                "contactType": "customer service",
+                "areaServed": "NZ",
+                "availableLanguage": "en"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ]
+            }
+        </script>
+        <!-- Schema For Website -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              "name": "Globlewaterblasting",
+              "url": "https://globalwaterblasting.co.nz/aboutus",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://globalwaterblasting.co.nz/aboutus{search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+        </script>
+        <!-- Breadcrumb -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/", 
+              "@type": "BreadcrumbList", 
+              "itemListElement": [{
+                "@type": "ListItem", 
+                "position": 1, 
+                "name": "Home",
+                "item": "https://globalwaterblasting.co.nz/"  
+              },{
+                "@type": "ListItem", 
+                "position": 2, 
+                "name": "Aboutus",
+                "item": "https://globalwaterblasting.co.nz/aboutus"  
+              }]
+            }
+        </script>
+    <% } else if(page == 'contactus') { %>
+        <!-- Schema For Local Business -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Globalwaterblasting",
+              "image": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "@id": "",
+              "url": "https://globalwaterblasting.co.nz/contactus",
+              "telephone": "+64223514444",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "",
+                "addressLocality": "Auckland",
+                "postalCode": "",
+                "addressCountry": "NZ"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -36.85475240366382,
+                "longitude": 174.77134142298442
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday"
+                ],
+                "opens": "08:00",
+                "closes": "17:00"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ] 
+            }
+        </script>
+        <!-- Schema For Organization -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Globalwaterblasting",
+              "alternateName": "globallawnmowing.co.nz",
+              "url": "https://globalwaterblasting.co.nz/contactus",
+              "logo": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+64223514444",
+                "contactType": "customer service",
+                "areaServed": "NZ",
+                "availableLanguage": "en"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ]
+            }
+        </script>
+        <!-- Schema For Website -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              "name": "Globlewaterblasting",
+              "url": "https://globalwaterblasting.co.nz/contactus",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://globalwaterblasting.co.nz/contactus{search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+        </script>
+        <!-- Breadcrumb -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/", 
+              "@type": "BreadcrumbList", 
+              "itemListElement": [{
+                "@type": "ListItem", 
+                "position": 1, 
+                "name": "Home",
+                "item": "https://globalwaterblasting.co.nz/"  
+              },{
+                "@type": "ListItem", 
+                "position": 2, 
+                "name": "Contactus",
+                "item": "https://globalwaterblasting.co.nz/contactus"  
+              }]
+            }
+        </script>
+    <% } else if(page == 'home') { %> 
+        <!-- Schema For Local Business -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Globalwaterblasting",
+              "image": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "@id": "",
+              "url": "https://globalwaterblasting.co.nz/",
+              "telephone": "+64223514444",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "",
+                "addressLocality": "Auckland",
+                "postalCode": "",
+                "addressCountry": "NZ"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -36.85475240366382,
+                "longitude": 174.77134142298442
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday"
+                ],
+                "opens": "08:00",
+                "closes": "17:00"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ] 
+            }
+        </script>
+        <!-- Schema For Organization -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Globalwaterblasting",
+              "alternateName": "globallawnmowing.co.nz",
+              "url": "https://globalwaterblasting.co.nz/#",
+              "logo": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+64223514444",
+                "contactType": "customer service",
+                "areaServed": "NZ",
+                "availableLanguage": "en"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ]
+            }
+        </script>
+        <!-- Schema For Website -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              "name": "Globlewaterblasting",
+              "url": "https://globalwaterblasting.co.nz/#",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://globalwaterblasting.co.nz/#{search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+        </script>
+        <!-- Breadcrumb -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/", 
+              "@type": "BreadcrumbList", 
+              "itemListElement": [{
+                "@type": "ListItem", 
+                "position": 1, 
+                "name": "Home",
+                "item": "https://globalwaterblasting.co.nz/"  
+              }]
+                
+              
+            }
+        </script>
+    <% } else if(page == 'ourwork') { %> 
+        <!-- Schema For Local Business -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Globalwaterblasting",
+              "image": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "@id": "",
+              "url": "https://globalwaterblasting.co.nz/ourwork",
+              "telephone": "+64223514444",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "",
+                "addressLocality": "Auckland",
+                "postalCode": "",
+                "addressCountry": "NZ"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -36.85475240366382,
+                "longitude": 174.77134142298442
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday"
+                ],
+                "opens": "08:00",
+                "closes": "17:00"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ] 
+            }
+        </script>
+        <!-- Schema For Organization -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Globalwaterblasting",
+              "alternateName": "globallawnmowing.co.nz",
+              "url": "https://globalwaterblasting.co.nz/ourwork",
+              "logo": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+64223514444",
+                "contactType": "customer service",
+                "areaServed": "NZ",
+                "availableLanguage": "en"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ]
+            }
+        <!-- Schema For Website -->
+        </script>
+        <!-- Schema For Website -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              "name": "Globlewaterblasting",
+              "url": "https://globalwaterblasting.co.nz/ourwork",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://globalwaterblasting.co.nz/ourwork{search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+        </script>
+        <!-- Breadcrumb -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/", 
+              "@type": "BreadcrumbList", 
+              "itemListElement": [{
+                "@type": "ListItem", 
+                "position": 1, 
+                "name": "Home",
+                "item": "https://globalwaterblasting.co.nz/"  
+              },{
+                "@type": "ListItem", 
+                "position": 2, 
+                "name": "Ourwork",
+                "item": "https://globalwaterblasting.co.nz/ourwork"  
+              }]
+            }
+        </script>
+    <% } else if(page == 'services') { %>
+        <!-- Schema For Local Business -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Globalwaterblasting",
+            "image": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+            "@id": "",
+            "url": "https://globalwaterblasting.co.nz/services",
+            "telephone": "+64223514444",
+            "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "",
+            "addressLocality": "Auckland",
+            "postalCode": "",
+            "addressCountry": "NZ"
+            },
+            "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -36.85475240366382,
+            "longitude": 174.77134142298442
+            },
+            "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "08:00",
+            "closes": "17:00"
+            },
+            "sameAs": [
+            "https://nikunj_kalsaria25@yahoo.com",
+            "https://globalwaterblasting@gmail.com",
+            "https://globalwaterblasting@gmail.com"
+            ]
+        }
+        </script>
+        <!-- Schema For Organization -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Globalwaterblasting",
+              "alternateName": "globallawnmowing.co.nz",
+              "url": "https://globalwaterblasting.co.nz/services",
+              "logo": "https://globalwaterblasting.co.nz/assets/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+64223514444",
+                "contactType": "customer service",
+                "areaServed": "NZ",
+                "availableLanguage": "en"
+              },
+              "sameAs": [
+                "https://nikunj_kalsaria25@yahoo.com",
+                "https://globalwaterblasting@gmail.com",
+                "https://globalwaterblasting@gmail.com"
+              ]
+            }
+        </script>
+        <!-- Schema For Website -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              "name": "Globlewaterblasting",
+              "url": "https://globalwaterblasting.co.nz/services",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://globalwaterblasting.co.nz/services{search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+        </script>
+        <!-- Breadcrumb -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org/", 
+              "@type": "BreadcrumbList", 
+              "itemListElement": [{
+                "@type": "ListItem", 
+                "position": 1, 
+                "name": "Home",
+                "item": "https://globalwaterblasting.co.nz/"  
+              },{
+                "@type": "ListItem", 
+                "position": 2, 
+                "name": "Services",
+                "item": "https://globalwaterblasting.co.nz/services"  
+              }]
+            }
+        </script>
+    <% } else if(page == 'servicedetails') { %> 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/images/logo.png" rel="shortcut icon">
+    <% } %>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/images/logo.png" rel="shortcut icon" />
 
     <title><%= seo.title %></title>
-    <meta name="description" content="<%= seo.description %>">
-    <meta name="author" content="Globalwaterblasting">
-    <meta name="copyright" content="Globalwaterblasting.co.nz">
-    <meta name="robots" content="index, follow">
-    <meta name="rating" content="general">
-    <meta name="keywords" content="Global Water Blasting, Exterior house wash, Auckland- NZ">
+    <meta name="description" content="<%= seo.description %>" />
+    <meta name="author" content="Globalwaterblasting" />
+    <meta name="copyright" content="Globalwaterblasting.co.nz" />
+    <meta name="robots" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta
+      name="keywords"
+      content="Global Water Blasting, Exterior house wash, Auckland- NZ"
+    />
     <link rel="canonical" href="<%= seo.canonical %>" />
 
-    <meta property="og:type" content="<%= seo.ogtype %>">
-    <meta property="og:title" content="<%= seo.ogtitle %>">
-    <meta property="og:url" content="<%= seo.ogurl %>">
-    <meta property="og:image" content="<%= seo.ogimage %>">
-    <meta property="og:description" content="<%= seo.ogdescription %>">
+    <meta property="og:type" content="<%= seo.ogtype %>" />
+    <meta property="og:title" content="<%= seo.ogtitle %>" />
+    <meta property="og:url" content="<%= seo.ogurl %>" />
+    <meta property="og:image" content="<%= seo.ogimage %>" />
+    <meta property="og:description" content="<%= seo.ogdescription %>" />
 
-    <meta name="twitter:card" content="<%= seo.twittercard %>">
-    <meta name="twitter:title" content="<%= seo.twittertitle %>">
-    <meta name="twitter:site" content="<%= seo.twittersite %>">
-    <meta name="twitter:description" content="<%= seo.twitterdescription %>">
-    <meta name="twitter:image" content="<%= seo.twitterimage %>">
-    <meta name="twitter:image:alt" content="<%= seo.twitterimagealt %>">
+    <meta name="twitter:card" content="<%= seo.twittercard %>" />
+    <meta name="twitter:title" content="<%= seo.twittertitle %>" />
+    <meta name="twitter:site" content="<%= seo.twittersite %>" />
+    <meta name="twitter:description" content="<%= seo.twitterdescription %>" />
+    <meta name="twitter:image" content="<%= seo.twitterimage %>" />
+    <meta name="twitter:image:alt" content="<%= seo.twitterimagealt %>" />
     <script type="application/ld+json">
-        {
+      {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Globalwaterblasting",
@@ -36,114 +514,167 @@
         "url": "https://globalwaterblasting.co.nz/#",
         "logo": "https://globalwaterblasting.co.nz/assets/images/logo.png",
         "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+64223514444",
-            "contactType": "customer service",
-            "areaServed": "NZ",
-            "availableLanguage": "en"
+          "@type": "ContactPoint",
+          "telephone": "+64223514444",
+          "contactType": "customer service",
+          "areaServed": "NZ",
+          "availableLanguage": "en"
         },
         "sameAs": [
-            "https://nikunj_kalsaria25@yahoo.com",
-            "https://globalwaterblasting@gmail.com",
-            "https://globalwaterblasting@gmail.com"
+          "https://nikunj_kalsaria25@yahoo.com",
+          "https://globalwaterblasting@gmail.com",
+          "https://globalwaterblasting@gmail.com"
         ]
-        }
+      }
     </script>
 
     <script type="application/ld+json">
-        {
+      {
         "@context": "https://schema.org/",
         "@type": "WebSite",
         "name": "Globlewaterblasting",
         "url": "https://globalwaterblasting.co.nz/#",
         "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://globalwaterblasting.co.nz/#{search_term_string}",
-            "query-input": "required name=search_term_string"
+          "@type": "SearchAction",
+          "target": "https://globalwaterblasting.co.nz/#{search_term_string}",
+          "query-input": "required name=search_term_string"
         }
-        }
+      }
     </script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TNTGD6L7');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TNTGD6L7");
+    </script>
     <!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GN12VWJ9YM"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-GN12VWJ9YM"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-GN12VWJ9YM');
+      gtag("config", "G-GN12VWJ9YM");
     </script>
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
     <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/angular/angular.min.js"></script>
     <script src="/javascripts/constants.js"></script>
     <script src="/javascripts/filters.js"></script>
     <script src="/javascripts/directives.js"></script>
     <script src="/javascripts/services.js"></script>
-</head>
+  </head>
 
-<body ng-app="GlobalWaterBlasting" ng-cloak>
+  <body ng-app="GlobalWaterBlasting" ng-cloak>
     <main>
-        <header class="bg-white py-3 md:py-5 fixed w-full top-0 z-50">
-            <div class="wrapper">
-                <div class="flex h-16 items-center justify-between">
-                    <div class="flex-1 md:flex md:items-center md:gap-12">
-                        <a class="block" href="/">
-                            <img src="assets/images/logo.png" class="max-w-[120px] sm:max-w-full" alt="logo" />
-                        </a>
-                    </div>
-                    <div class="md:flex md:items-center md:gap-12">
-                        <nav aria-label="Global" id="navBar"
-                            class="absolute -translate-x-full md:translate-x-0 anim w-full md:w-auto p-5 md:p-0 bg-white left-0 top-full md:relative md:block">
-                            <ul class="space-y-5 md:space-y-0 md:flex items-center md:gap-10 text-sm">
-                                <li class="group relative">
-                                    <span class="nav_anim"></span>
-                                    <a class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
-                                        href="/">Home</a>
-                                </li>
-                                <li class="group relative">
-                                    <span class="nav_anim"></span>
-                                    <a class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
-                                        href="/services">Services</a>
-                                </li>
-                                <li class="group relative">
-                                    <span class="nav_anim"></span>
-                                    <a class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
-                                        href="/ourwork">Our Work</a>
-                                </li>
-                                <li class="group relative">
-                                    <span class="nav_anim"></span>
-                                    <a class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
-                                        href="/aboutus">About Us</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="flex items-center gap-3">
-                            <a class="text-sm font-medium text-white rounded-md bg-primary border border-primary hover:bg-white hover:text-primary anim px-3 md:px-5 py-1.5 md:py-2.5"
-                                href="/contactus">Contact Us</a>
-                            <div class="block md:hidden">
-                                <button class="rounded bg-primary p-2 text-gray-600 transition hover:text-gray-600/75"
-                                    onclick="toggleActive('navBar','-translate-x-full')">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-white" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <header class="bg-white py-3 md:py-5 fixed w-full top-0 z-50">
+        <div class="wrapper">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex-1 md:flex md:items-center md:gap-12">
+              <a class="block" href="/">
+                <img
+                  src="assets/images/logo.png"
+                  class="max-w-[120px] sm:max-w-full"
+                  alt="logo"
+                />
+              </a>
             </div>
-        </header>
+            <div class="md:flex md:items-center md:gap-12">
+              <nav
+                aria-label="Global"
+                id="navBar"
+                class="absolute -translate-x-full md:translate-x-0 anim w-full md:w-auto p-5 md:p-0 bg-white left-0 top-full md:relative md:block"
+              >
+                <ul
+                  class="space-y-5 md:space-y-0 md:flex items-center md:gap-10 text-sm"
+                >
+                  <li class="group relative">
+                    <span class="nav_anim"></span>
+                    <a
+                      class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
+                      href="/"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="group relative">
+                    <span class="nav_anim"></span>
+                    <a
+                      class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
+                      href="/services"
+                      >Services</a
+                    >
+                  </li>
+                  <li class="group relative">
+                    <span class="nav_anim"></span>
+                    <a
+                      class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
+                      href="/ourwork"
+                      >Our Work</a
+                    >
+                  </li>
+                  <li class="group relative">
+                    <span class="nav_anim"></span>
+                    <a
+                      class="text-xl md:text-base font-medium text-dark group-hover:opacity-80"
+                      href="/aboutus"
+                      >About Us</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+              <div class="flex items-center gap-3">
+                <a
+                  class="text-sm font-medium text-white rounded-md bg-primary border border-primary hover:bg-white hover:text-primary anim px-3 md:px-5 py-1.5 md:py-2.5"
+                  href="/contactus"
+                  >Contact Us</a
+                >
+                <div class="block md:hidden">
+                  <button
+                    class="rounded bg-primary p-2 text-gray-600 transition hover:text-gray-600/75"
+                    onclick="toggleActive('navBar','-translate-x-full')"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5 stroke-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </main>
+  </body>
+</html>

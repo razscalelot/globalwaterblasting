@@ -31,7 +31,7 @@ router.get('/', function (req, res, next) {
     twitterdescription: 'Contact Global water blasting: Mon - Thu: 9 am - 5 pm, Weekend: 10 am - 3 pm. Entire Auckland region | +64223514444 | globalwaterblasting@gmail.com',
     twitterimagealt: 'Globalwaterblastinglogo'
   }
-  res.render('front/app/contactus', { seo: seo, title: 'Contact Us || Global Water Blasting', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
+  res.render('front/app/contactus', { seo: seo, title: 'Contact Us || Global Water Blasting', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI, page : 'contactus' });
 });
 
 router.post('/', async (req, res) => {

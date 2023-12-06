@@ -4,11 +4,11 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   let seo = {
-    title: 'About Us -Global Water Blasting NZ',
+    title: 'About Us - NZ Global Water Blasting Lynfield, Auckland',
     description: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.!',
     canonical: 'https://globalwaterblasting.co.nz/aboutus',
     ogtype: 'article',
-    ogtitle: 'About Us -Global Water Blasting NZ',
+    ogtitle: 'About Us - NZ Global Water Blasting Lynfield, Auckland',
     ogurl: 'https://globalwaterblasting.co.nz/aboutus',
     ogimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
     ogdescription: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.',
@@ -17,12 +17,12 @@ router.get('/', function (req, res, next) {
     articletag: 'Globalwaterblastinglogo',
     twittercard: 'summary',
     twittersite: '@https://globalwaterblasting.co.nz/aboutus',
-    twittertitle: 'About Us -Global Water Blasting NZ',
+    twittertitle: 'About Us - NZ Global Water Blasting Lynfield, Auckland',
     twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
     twitterdescription: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.',
     twitterimagealt: 'Globalwaterblastinglogo'
   }
-  res.render('front/app/aboutus', { seo: seo, title: 'About Us - Global Water Blasting NZ', description: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
+  res.render('front/app/aboutus', { seo: seo, title: 'About Us - Global Water Blasting NZ', description: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI, page : 'aboutus' });
 });
 
 module.exports = router;

@@ -36,9 +36,9 @@ router.get('/', async (req, res) => {
       twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
       twitterimagealt: 'Globalwaterblastinglogo'
     }
-    res.render('front/app/servicedetails', { seo: seo, title: 'Service Details || Global Water Blasting', serviceName: serviceName, serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
+    res.render('front/app/servicedetails', { seo: seo, title: 'Service Details || Global Water Blasting', serviceName: serviceName, serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI, page : 'servicedetails' });
   } else {
-    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI });
+    res.render('front/app/servicedetails', { title: 'Service Details || Global Water Blasting', serviceData: serviceData, message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI, page : 'servicedetails' });
   }
 });
 
