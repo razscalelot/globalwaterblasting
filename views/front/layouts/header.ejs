@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- if(page == 'aboutus') { %> 
+    <%= if(page == 'aboutus') { %> 
         <!-- Schema For Local Business -->
         <script type="application/ld+json">
             {
@@ -97,7 +97,7 @@
               }]
             }
         </script>
-    <% } else if(page == 'contactus') { %>
+    <%= } else if(page == 'contactus') { %>
         <!-- Schema For Local Business -->
         <script type="application/ld+json">
             {
@@ -193,7 +193,7 @@
               }]
             }
         </script>
-    <% } else if(page == 'home') { %> 
+    <%= } else if(page == 'home') { %> 
         <!-- Schema For Local Business -->
         <script type="application/ld+json">
             {
@@ -286,7 +286,7 @@
               
             }
         </script>
-    <% } else if(page == 'ourwork') { %> 
+    <%= } else if(page == 'ourwork') { %> 
         <!-- Schema For Local Business -->
         <script type="application/ld+json">
             {
@@ -383,7 +383,7 @@
               }]
             }
         </script>
-    <% } else if(page == 'services') { %>
+    <%= } else if(page == 'services') { %>
         <!-- Schema For Local Business -->
         <script type="application/ld+json">
         {
@@ -474,9 +474,9 @@
               }]
             }
         </script>
-    <% } else if(page == 'servicedetails') { %> 
+    <%= } else if(page == 'servicedetails') { %> 
 
-    <% } %>
+    <%= } %>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="assets/images/logo.png" rel="shortcut icon" />
