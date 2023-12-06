@@ -10,7 +10,7 @@ const responseManager = require('../../utilities/response.manager');
 router.get('/', async (req, res) => {
     let seo = {
         title: 'Pressure Washing & Cleaning Services Global Water Blasting NZ',
-        description: 'Book your slot with our leading industry specialists at Pro Waterblasting by filling in the online form or calling us at +64223514444 for further help. Contact today!Book your slot with our leading industry specialists at Pro Waterblasting by filling in the online form or calling us at +64223514444 for further help. Contact today!',
+        description: 'Global Water Blasting services: House washing, fence and driveway washing, roof washing and moss & mold treatment, gutter cleaning, and deck washing.',
         canonical: 'https://globalwaterblasting.co.nz/services',
         ogtype: 'article',
         ogtitle: 'Pressure Washing & Cleaning Services Global Water Blasting NZ',
