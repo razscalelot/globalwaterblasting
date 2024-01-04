@@ -1,161 +1,161 @@
 <!-- Services Banner- [S] -->
 <% if(serviceData && serviceData != null){ %>
-<section class="w-full overflow-hidden pt-24 sm:pt-28 lg:pt-32 xl:pt-36 pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
-    <div class="wrapper">
-        <div class="w-full rounded-2xl overflow-hidden mb-5 md:mb-6 lg:mb-8" data-aos="zoom-in"
-            data-aos-duration="1500">
-                <img src="<%= AWS_BUCKET_URI %><%= serviceData.banner %>" alt="Services" class="min-h-[250px] w-full" />
-        </div>
-        <div class="w-full space-y-3 sm:space-y-3.5 md:space-y-4 lg:space-y-5">
-            <div class="w-full space-y-1 sm:space-y-2 md:space-y-3">
-                <h3 class="text-primary">Importance of <%= serviceData.servicename %>
-                </h3>
-                <p class="p1 opacity-70">
-                    <%- serviceData.longdesc %>
-                </p>
+    <section class="w-full overflow-hidden pt-24 sm:pt-28 lg:pt-32 xl:pt-36 pb-10 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24">
+        <div class="wrapper">
+            <div class="w-full rounded-2xl overflow-hidden mb-5 md:mb-6 lg:mb-8" data-aos="zoom-in"
+                data-aos-duration="1500">
+                    <img src="<%= AWS_BUCKET_URI %><%= serviceData.banner %>" alt="Services" class="min-h-[250px] w-full" />
             </div>
-        </div>
-        <div class="w-full max-w-[730px] container my-5 sm:my-6 md:my-8 lg:my-10" data-aos="fade-left"
-            data-aos-duration="1500">
-            <div class="image-container">
-                <img class="image-before slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= serviceData.images.before %>" alt="Before Service" />
-                <img class="image-after slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= serviceData.images.after %>" alt="After Service" />                    
-            </div>
-            <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown"
-                class="slider" />
-            <div class="slider-line" aria-hidden="true"></div>
-            <div class="slider-button" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                    viewBox="0 0 256 256">
-                    <rect width="256" height="256" fill="none"></rect>
-                    <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="16"></line>
-                    <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="16"></line>
-                    <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="16"></polyline>
-                    <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="16"></line>
-                    <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="16"></polyline>
-                </svg>
-            </div>
-        </div>
-        <div class="w-full space-y-3 sm:space-y-4 lg:space-y-6">
-            <div class="w-full space-y-1 sm:space-y-2 md:space-y-3">
-                <h3 class="text-primary">
-                    <%= serviceData.servicedetails.title %>
-                </h3>
-                <%= serviceData.servicedetails.longdesc %>
-            </div>
-            <ul class="list-disc space-y-3 sm:space-y-4 lg:space-y-6 pl-6 lg:pl-8">
-                <% serviceData.servicedetails.points.forEach((point)=> { %>
-                    <li class="w-full marker:text-primary marker:text-xl sm:marker:text-2xl lg:marker:text-3xl">
-                        <h4 class="text-primary">
-                            <%= point.title %>
-                        </h4>
-                        <p class="p1 opacity-70">
-                            <%= point.description %>
-                        </p>
-                    </li>
-                    <% }) %>
-            </ul>
-        </div>
-        <div class="w-full mt-5">
-            <p class="p1 opacity-70">
-                <%= serviceData.servicedetails.shortdesc %>
-            </p>
-            <button class="btn-primary sm:max-w-[180px] w-full py-1.5 mt-3" onclick="removeAdd('house_services','hidden','flex')">Get a Free Qoute</button>
-        </div>
-    </div>
-</section>
-<!-- Services Banner- [E] -->
-
-<!-- Pop-up [S] -->
-<div class="w-full h-screen fixed inset-0 hidden items-center justify-center px-5 z-50" id="house_services">
-    <span class="block absolute inset-0 bg-black/40 cursor-pointer"
-        onclick="removeAdd('house_services','flex','hidden')"></span>
-    <div class="relative max-w-3xl w-full bg-white rounded-2xl md:rounded-3xl shadow-xl p-5 sm:p-8 md:p-10">
-        <div class="w-full pr-10">
-            <h3 class="max-w-4xl mb-1">Would You Like a Quote for Your House Cleaning?</h3>
-            <span class="block text-xl font-medium">Fill out the form below to receive your quote</span>
-            <span class="block" onclick="removeAdd('house_services','flex','hidden')">
-                <svg class="absolute top-8 right-5 md:top-11 md:right-10 w-7 h-7 cursor-pointer" viewBox="0 0 1024 1024"
-                    xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill="#000000"
-                            d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z">
-                        </path>
-                    </g>
-                </svg>
-            </span>
-        </div>
-        <form class="flex flex-wrap -mx-1 md:-mx-3 mt-3" action="/servicedetails" method="post">
-            <div class="w-full sm:w-1/2 p-1 md:p-3">
-                <div class="max-w-[600px]">
-                    <!-- <label for="y_name" class="block font-medium text-light_gray cursor-pointer pb-1">Your Name</label> -->
-                    <input id="y_name" type="text" name="name"
-                        class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
-                        placeholder="Your Name">
+            <div class="w-full space-y-3 sm:space-y-3.5 md:space-y-4 lg:space-y-5">
+                <div class="w-full space-y-1 sm:space-y-2 md:space-y-3">
+                    <h3 class="text-primary">Importance of <%= serviceData.servicename %>
+                    </h3>
+                    <p class="p1 opacity-70">
+                        <%- serviceData.longdesc %>
+                    </p>
                 </div>
             </div>
-            <div class="w-full sm:w-1/2 p-1 md:p-3">
-                <div class="max-w-[600px] sm:ml-auto">
-                    <!-- <label for="email" class="block font-medium text-light_gray cursor-pointer pb-1">Email</label> -->
-                    <input id="email" type="email" name="email"
-                        class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
-                        placeholder="Email">
+            <div class="w-full max-w-[730px] container my-5 sm:my-6 md:my-8 lg:my-10" data-aos="fade-left"
+                data-aos-duration="1500">
+                <div class="image-container">
+                    <img class="image-before slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= serviceData.images.before %>" alt="Before Service" />
+                    <img class="image-after slider-image max-w-full" src="<%= AWS_BUCKET_URI %><%= serviceData.images.after %>" alt="After Service" />                    
                 </div>
-            </div>
-            <div class="w-full sm:w-1/2 p-1 md:p-3">
-                <div class="max-w-[600px]">
-                    <!-- <label for="phone_number" class="block font-medium text-light_gray cursor-pointer pb-1">Phone Number</label> -->
-                    <input id="phone_number" type="tel" name="mobile"
-                        class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
-                        placeholder="Phone Number">
-                </div>
-            </div>
-            <div class="w-full sm:w-1/2 p-1 md:p-3">
-                <div class="max-w-[600px] sm:ml-auto">
-                    <!-- <label for="address" class="block font-medium text-light_gray cursor-pointer pb-1">Address</label> -->
-                    <input id="address" type="text" name="address"
-                        class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
-                        placeholder="Address">
-                </div>
-            </div>
-
-            <div class="w-full p-1 md:p-3 relative">
-                <select name="selected_service" id="choose_services"
-                    class="w-full text-sm font-medium outline-none rounded-lg bg-[#F2F4F7] appearance-none py-2.5 px-5">
-                    <option value="choose_services">Choose Services...</option>
-                    <% serviceName.forEach((name)=> { %>
-                    <option value="<%= name.servicename %>"><%= name.servicename %></option>
-                    <% }) %>
-                </select>
-                <div class="absolute right-5 top-1/2 -translate-y-1/2">
-                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown"
+                    class="slider" />
+                <div class="slider-line" aria-hidden="true"></div>
+                <div class="slider-button" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></line>
+                        <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></polyline>
+                        <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></line>
+                        <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="16"></polyline>
                     </svg>
                 </div>
             </div>
-            <div class="w-full p-1 md:p-3">
-                <div class="w-full">
-                    <!-- <label for="massage" class="block font-medium text-light_gray cursor-pointer pb-1">Massage</label> -->
-                    <textarea id="massage" name="massage"
-                        class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
-                        placeholder="Massage" rows="3"></textarea>
+            <div class="w-full space-y-3 sm:space-y-4 lg:space-y-6">
+                <div class="w-full space-y-1 sm:space-y-2 md:space-y-3">
+                    <h3 class="text-primary">
+                        <%= serviceData.servicedetails.title %>
+                    </h3>
+                    <%= serviceData.servicedetails.longdesc %>
                 </div>
+                <ul class="list-disc space-y-3 sm:space-y-4 lg:space-y-6 pl-6 lg:pl-8">
+                    <% serviceData.servicedetails.points.forEach((point)=> { %>
+                        <li class="w-full marker:text-primary marker:text-xl sm:marker:text-2xl lg:marker:text-3xl">
+                            <h4 class="text-primary">
+                                <%= point.title %>
+                            </h4>
+                            <p class="p1 opacity-70">
+                                <%= point.description %>
+                            </p>
+                        </li>
+                        <% }) %>
+                </ul>
             </div>
-            <div class="w-full p-3">
-                <input type="hidden" name="redirect" value="<%= serviceData.serviceslug %>">
-                <button type="submit"
-                    class="block text-sm md:text-base btn-primary max-w-[180px] w-full text-center cursor-pointer mx-auto"
-                    style="line-height: 16px;">Send</button>
+            <div class="w-full mt-5">
+                <p class="p1 opacity-70">
+                    <%= serviceData.servicedetails.shortdesc %>
+                </p>
+                <button class="btn-primary sm:max-w-[180px] w-full py-1.5 mt-3" onclick="removeAdd('house_services','hidden','flex')">Get a Free Qoute</button>
             </div>
-        </form>
+        </div>
+    </section>
+    <!-- Services Banner- [E] -->
+    
+    <!-- Pop-up [S] -->
+    <div class="w-full h-screen fixed inset-0 hidden items-center justify-center px-5 z-50" id="house_services">
+        <span class="block absolute inset-0 bg-black/40 cursor-pointer"
+            onclick="removeAdd('house_services','flex','hidden')"></span>
+        <div class="relative max-w-3xl w-full bg-white rounded-2xl md:rounded-3xl shadow-xl p-5 sm:p-8 md:p-10">
+            <div class="w-full pr-10">
+                <h3 class="max-w-4xl mb-1">Would You Like a Quote for Your House Cleaning?</h3>
+                <span class="block text-xl font-medium">Fill out the form below to receive your quote</span>
+                <span class="block" onclick="removeAdd('house_services','flex','hidden')">
+                    <svg class="absolute top-8 right-5 md:top-11 md:right-10 w-7 h-7 cursor-pointer" viewBox="0 0 1024 1024"
+                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill="#000000"
+                                d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z">
+                            </path>
+                        </g>
+                    </svg>
+                </span>
+            </div>
+            <form class="flex flex-wrap -mx-1 md:-mx-3 mt-3" action="/servicedetails" method="post">
+                <div class="w-full sm:w-1/2 p-1 md:p-3">
+                    <div class="max-w-[600px]">
+                        <!-- <label for="y_name" class="block font-medium text-light_gray cursor-pointer pb-1">Your Name</label> -->
+                        <input id="y_name" type="text" name="name"
+                            class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
+                            placeholder="Your Name">
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 p-1 md:p-3">
+                    <div class="max-w-[600px] sm:ml-auto">
+                        <!-- <label for="email" class="block font-medium text-light_gray cursor-pointer pb-1">Email</label> -->
+                        <input id="email" type="email" name="email"
+                            class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
+                            placeholder="Email">
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 p-1 md:p-3">
+                    <div class="max-w-[600px]">
+                        <!-- <label for="phone_number" class="block font-medium text-light_gray cursor-pointer pb-1">Phone Number</label> -->
+                        <input id="phone_number" type="tel" name="mobile"
+                            class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
+                            placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 p-1 md:p-3">
+                    <div class="max-w-[600px] sm:ml-auto">
+                        <!-- <label for="address" class="block font-medium text-light_gray cursor-pointer pb-1">Address</label> -->
+                        <input id="address" type="text" name="address"
+                            class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
+                            placeholder="Address">
+                    </div>
+                </div>
+    
+                <div class="w-full p-1 md:p-3 relative">
+                    <select name="selected_service" id="choose_services"
+                        class="w-full text-sm font-medium outline-none rounded-lg bg-[#F2F4F7] appearance-none py-2.5 px-5">
+                        <option value="choose_services">Choose Services...</option>
+                        <% serviceName.forEach((name)=> { %>
+                        <option value="<%= name.servicename %>"><%= name.servicename %></option>
+                        <% }) %>
+                    </select>
+                    <div class="absolute right-5 top-1/2 -translate-y-1/2">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="w-full p-1 md:p-3">
+                    <div class="w-full">
+                        <!-- <label for="massage" class="block font-medium text-light_gray cursor-pointer pb-1">Massage</label> -->
+                        <textarea id="massage" name="massage"
+                            class="w-full text-sm outline-none rounded-lg bg-[#F2F4F7] placeholder:text-black py-2.5 px-5"
+                            placeholder="Massage" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="w-full p-3">
+                    <input type="hidden" name="redirect" value="<%= serviceData.serviceslug %>">
+                    <button type="submit"
+                        class="block text-sm md:text-base btn-primary max-w-[180px] w-full text-center cursor-pointer mx-auto"
+                        style="line-height: 16px;">Send</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-<% } else { %>
-    <h1>Service Not Found...</h1>
-<% } %>
-<!-- Pop-up [E] -->
+    <% } else { %>
+        <h1>Service Not Found...</h1>
+    <% } %>
+    <!-- Pop-up [E] -->
