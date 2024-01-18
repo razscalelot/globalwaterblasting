@@ -1028,7 +1028,7 @@ p {
 
 @media (min-width: 1024px) {
   .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 0.5rem;
+    bottom: 1rem;
   }
 }
 
