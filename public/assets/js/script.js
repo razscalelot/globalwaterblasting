@@ -122,32 +122,10 @@ var swiper = new Swiper(".mySwiper3", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop:true,
-  // pagination: {
-  //   el: ".swiper-pagination",
-  //   clickable: true,
-  // },
   autoplay:{
-    delay: 1500,
+    delay: 2500,
     reverseDirection:false,
   },
-  // navigation: {
-  //   nextEl: '.next',
-  //   prevEl: '.prev',
-  // },
-  // breakpoints: {
-  //   640: {
-  //     slidesPerView: 1,
-  //     spaceBetween: 15,
-  //   },
-  //   768: {
-  //     slidesPerView: 2,
-  //     spaceBetween: 30,
-  //   },
-  //   1024: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 40,
-  //   },
-  // },
 });
 
 // Slider Image
@@ -184,19 +162,6 @@ function changeImage(services,index){
       document.querySelector('.image-after').src = houseCleaningBeforeImagesArr[index];
     }
   }
-  // if(services == "outdoor_cliening"){
-  //   document.querySelector('.image-before').src = Outdoor1;  
-  //   document.querySelector('.image-after').src = Outdoor2;  
-  // }else if(services == "house_cliening"){
-  //   document.querySelector('.image-before').src = houseServices1;  
-  //   document.querySelector('.image-after').src = houseServices2;  
-  // }else if(services == "roof_washing"){
-  //   document.querySelector('.image-before').src = roofWashing1;  
-  //   document.querySelector('.image-after').src = roofWashing2;  
-  // } else if(services == "deckWashing"){
-  //   document.querySelector('.image-before').src = deckWashi1;  
-  //   document.querySelector('.image-after').src = deckWashi2;  
-  // }
 }
 document.getElementById('outdoor_cliening').addEventListener('click', function(){
   changeImage("outdoor_cliening");
