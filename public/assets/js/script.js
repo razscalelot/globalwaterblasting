@@ -145,14 +145,14 @@ function AfterBefore(Services,index){
   }
 }
 
-var houseServices1 = 'assets/images/service-before.jpg';
-var houseServices2 = 'assets/images/service-after.jpg';
-var roofWashing1 = 'assets/images/roofWashing2.jpg';
-var roofWashing2 = 'assets/images/roofWashing1.jpg';
-var Outdoor1 = 'assets/images/garden1.jpeg';
-var Outdoor2 = 'assets/images/garden2.jpeg';
-var deckWashi1 = 'assets/images/dackWash2.png';
-var deckWashi2 = 'assets/images/deckWash1.png';
+var houseServices1 = 'assets/images/service-before.webp';
+var houseServices2 = 'assets/images/service-after.webp';
+var roofWashing1 = 'assets/images/roofWashing2.webp';
+var roofWashing2 = 'assets/images/roofWashing1.webp';
+var Outdoor1 = 'assets/images/garden1.webp';
+var Outdoor2 = 'assets/images/garden2.webp';
+var deckWashi1 = 'assets/images/dackWash2.webp';
+var deckWashi2 = 'assets/images/deckWash1.webp';
 
 function changeImage(services,index){
   // console.log(132);

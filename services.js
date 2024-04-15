@@ -3,14 +3,14 @@ let services = [
         "_id": "1",
         "servicename": "House Washing",
         "serviceslug": "house-washing",
-        "image": "assets/images/house-cleaning1.png",
-        "banner": "assets/images/housecleaning-banner.png",
+        "image": "assets/images/house-cleaning1.webp",
+        "banner": "assets/images/housecleaning-banner.webp",
         "shortdesc": "Have a spotless, like-new home outside that boosts its appeal and safeguards your investment",
         "longdesc": "<p style='margin-left:0px;'>Exterior house cleaning of walls is of paramount importance as it not only enhances the aesthetic appeal of your home but also plays a vital role in its long-term maintenance. Over time, outdoor walls accumulate dirt, grime, Mould, algae, and pollutants, which can not only detract from your home's appearance but also lead to structural deterioration.</p><p style='margin-left:0px;'>Regular cleaning not only restores the beauty of your property but also protects it from potential damage caused by environmental factors and biological growth. It is a proactive measure that not only preserves your home's value but also ensures a healthier living environment for you and your family.</p>",
         "images": [
             {
-                "before": "assets/images/service-before.jpg",
-                "after": "assets/images/service-after.jpg"
+                "before": "assets/images/service-before.webp",
+                "after": "assets/images/service-after.webp"
             }
         ],
         "servicedetails": {
@@ -38,14 +38,14 @@ let services = [
         "_id": "2",
         "servicename": "Fence & Patio Cleaning",
         "serviceslug": "fence-patio-cleaning",
-        "image": "assets/images/fence-cleaning.png",
-        "banner": "assets/images/fencecleaning-banners.png",
+        "image": "assets/images/fence-cleaning.webp",
+        "banner": "assets/images/fencecleaning-banners.webp",
         "shortdesc": "Restore the beauty of your fencing, ensuring long-lasting durability and a refreshed appearance.",
         "longdesc": "<p style='margin-left:0px;'>Fence and patio cleaning revitalizes your outdoor spaces, ensuring they remain both aesthetically pleasing and structurally sound. Over time, fences and patios accumulate dirt, Mould, algae, and grime, diminishing their visual appeal and potentially leading to long-term damage.</p><p style='margin-left:0px;'>Regular cleaning not only restores their beauty but also extends their lifespan, saving homeowners from costly repairs or replacements. Additionally, a clean and well-maintained outdoor area enhances the overall enjoyment and functionality of the property, providing a welcoming space for relaxation, entertainment, and quality family time.</p>",
         "images": [
             {
-                "before": "assets/images/garden1.jpeg",
-                "after": "assets/images/garden2.jpeg"
+                "before": "assets/images/garden1.webp",
+                "after": "assets/images/garden2.webp"
             }
         ],
         "servicedetails": {
@@ -72,14 +72,14 @@ let services = [
         "_id": "3",
         "servicename": "Driveway & Sidewalk Wash",
         "serviceslug": "driveway-sidewalk-wash",
-        "image": "assets/images/drivewaycleaning-services.png",
-        "banner": "assets/images/drivewaycleaning-banners.png",
+        "image": "assets/images/drivewaycleaning-services.webp",
+        "banner": "assets/images/drivewaycleaning-banners.webp",
         "shortdesc": "Make your driveway a tidy and welcoming area that enhances the appearance of your property overall.",
         "longdesc": "<p>We understand that the first impressions of your property often begin with the driveway and sidewalks. These vital pathways deserve meticulous care and attention to maintain their functionality and aesthetic appeal. Also, the removal of moss, algae, and other slip hazards reduces the risk of accidents on your walkways.</p>",
         "images": [
             {
-                "before": "assets/images/cleaning-services1.jpg",
-                "after": "assets/images/cleaning-services2.jpg"
+                "before": "assets/images/cleaning-services1.webp",
+                "after": "assets/images/cleaning-services2.webp"
             }
         ],
         "servicedetails": {
@@ -110,14 +110,14 @@ let services = [
         "_id": "4",
         "servicename": "Roof Moss & Mould Treatment",
         "serviceslug": "roof-moss-mould-treatment",
-        "image": "assets/images/roofWashing1.png",
-        "banner": "assets/images/roofcleaning-banner.png",
+        "image": "assets/images/roofWashing1.webp",
+        "banner": "assets/images/roofcleaning-banner.webp",
         "shortdesc": "Increase the lifespan of your roof, get rid of dirty stains, and maintain the top layer of your home.",
         "longdesc": "<p style='margin-left:0px;'>Regular roof maintenance, such as moss, mould, and lichen treatment, is essential to ensure the longevity and functionality of your roof while also saving you money in the long run. This treatment not only prevents damage to your roof but also extends the life of the existing paint system, keeping your roof surface in excellent condition</p><p style='margin-left:0px'Over a few months, the treatment naturally removes moss, leaving your roof moss-free for up to 2 years or even longer. Unlike a standard roof clean, this treatment offers the best option for permanent moss removal, safeguarding your roof and preserving it for years to come.</p>",
         "images": [
             {
-                "before": "assets/images/roofWashing2.jpg",
-                "after": "assets/images/roofWashing1.jpg"
+                "before": "assets/images/roofWashing2.webp",
+                "after": "assets/images/roofWashing1.webp"
             }
         ],
         "servicedetails": {
@@ -144,14 +144,14 @@ let services = [
         "_id": "5",
         "servicename": "Gutter Cleaning",
         "serviceslug": "gutter-cleaning",
-        "image": "assets/images/gutter-cleaning.png",
-        "banner": "assets/images/guttercleaning-banner.png",
+        "image": "assets/images/gutter-cleaning.webp",
+        "banner": "assets/images/guttercleaning-banner.webp",
         "shortdesc": "Unclog the gutters allowing free flow of water to keep your roofs dry and unharmed.",
         "longdesc": "<p>Gutter cleaning plays a pivotal role in maintaining the safety of your home and ensuring a healthy living environment. Clean gutters offer a multitude of benefits that safeguard your property and promote a higher standard of home health. Regular gutter maintenance can ultimately save you from costly repairs in the long run.</p>",
         "images": [
             {
-                "before": "assets/images/service-before.jpg",
-                "after": "assets/images/service-after.jpg"
+                "before": "assets/images/service-before.webp",
+                "after": "assets/images/service-after.webp"
             }
         ],
         "servicedetails": {
@@ -178,14 +178,14 @@ let services = [
         "_id": "6",
         "servicename": "Deck Wash",
         "serviceslug": "deck-wash",
-        "image": "assets/images/deckscleaning-services.png",
-        "banner": "assets/images/deckscleaning-banner.png",
+        "image": "assets/images/deckscleaning-services.webp",
+        "banner": "assets/images/deckscleaning-banner.webp",
         "shortdesc": "Discover the true beauty of your outdoor spaces with our expert deck cleaning, ensuring your deck glows like new.",
         "longdesc": "<p style='margin-left:0px;'>Decks are constantly exposed to the elements, making them susceptible to the accumulation of dirt, grime, mold, and algae, which not only detract from their beauty but can also lead to structural damage and slippery surfaces that pose safety hazards.</p><p style='margin-left:0px;'>Regular deck washing not only restores the deck's natural beauty but also extends its lifespan by preventing wood decay and rot. This maintenance not only enhances the value of your property but also ensures a safe and inviting space for outdoor activities, making it a vital investment in both your home and your family's well-being.</p>",
         "images": [
             {
-                "before": "assets/images/dackWash2.png",
-                "after": "assets/images/deckWash1.png"
+                "before": "assets/images/dackWash2.webp",
+                "after": "assets/images/deckWash1.webp"
             }
         ],
         "servicedetails": {
