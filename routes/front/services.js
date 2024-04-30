@@ -9,11 +9,11 @@ const responseManager = require('../../utilities/response.manager');
 /* GET home page. */
 router.get('/', async (req, res) => {
     let seo = {
-        title: 'Pressure Washing & Cleaning Services Global Water Blasting NZ',
+        title: 'Pressure Washing & Cleaning Services Auckland Region NZ',
         description: 'Global Water Blasting services: House washing, fence and driveway washing, roof washing and moss & mold treatment, gutter cleaning, and deck washing.',
         canonical: 'https://globalwaterblasting.co.nz/services',
         ogtype: 'article',
-        ogtitle: 'Pressure Washing & Cleaning Services Global Water Blasting NZ',
+        ogtitle: 'Pressure Washing & Cleaning Services Auckland Region NZ',
         ogurl: 'https://globalwaterblasting.co.nz/services',
         ogimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
         ogdescription: 'Global Water Blasting services: House washing, fence and driveway washing, roof washing and moss & mold treatment, gutter cleaning, and deck washing.',
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
         articletag: 'Globalwaterblastinglogo',
         twittercard: 'summary',
         twittersite: '@https://globalwaterblasting.co.nz/services',
-        twittertitle: 'Pressure Washing & Cleaning Services Global Water Blasting NZ',
+        twittertitle: 'Pressure Washing & Cleaning Services Auckland Region NZ',
         twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
         twitterdescription: 'Global Water Blasting services: House washing, fence and driveway washing, roof washing and moss & mold treatment, gutter cleaning, and deck washing.',
         twitterimagealt: 'Globalwaterblastinglogo'

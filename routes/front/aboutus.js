@@ -4,11 +4,11 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function (req, res, next) {
   let seo = {
-    title: 'About Us - NZ Global Water Blasting Lynfield, Auckland',
+    title: 'About Us - Water Blasting Services In Auckland Region NZ',
     description: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.!',
     canonical: 'https://globalwaterblasting.co.nz/aboutus',
     ogtype: 'article',
-    ogtitle: 'About Us - NZ Global Water Blasting Lynfield, Auckland',
+    ogtitle: 'About Us - Water Blasting Services In Auckland Region NZ',
     ogurl: 'https://globalwaterblasting.co.nz/aboutus',
     ogimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
     ogdescription: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.',
@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
     articletag: 'Globalwaterblastinglogo',
     twittercard: 'summary',
     twittersite: '@https://globalwaterblasting.co.nz/aboutus',
-    twittertitle: 'About Us - NZ Global Water Blasting Lynfield, Auckland',
+    twittertitle: 'About Us - Water Blasting Services In Auckland Region NZ',
     twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
     twitterdescription: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.',
     twitterimagealt: 'Globalwaterblastinglogo'

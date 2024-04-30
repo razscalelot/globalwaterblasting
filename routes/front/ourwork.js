@@ -13,11 +13,11 @@ apiKey.apiKey = process.env.SIB_API_KEY;
 /* GET home page. */
 router.get('/', function (req, res, next) {
   let seo = {
-    title: 'Our Work - Global Water Blasting Lynfield, Auckland, NZ',
+    title: 'Our Work - Water Blasting Services Lynfield, Auckland Region, NZ',
     description: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homesy!',
     canonical: 'https://globalwaterblasting.co.nz/ourwork',
     ogtype: 'article',
-    ogtitle: 'Our Work - Global Water Blasting Lynfield, Auckland, NZ',
+    ogtitle: 'Our Work - Water Blasting Services Lynfield, Auckland Region, NZ',
     ogurl: 'https://globalwaterblasting.co.nz/ourwork',
     ogimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
     ogdescription: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homes',
@@ -26,7 +26,7 @@ router.get('/', function (req, res, next) {
     articletag: 'Globalwaterblastinglogo',
     twittercard: 'summary',
     twittersite: '@https://globalwaterblasting.co.nz/ourwork',
-    twittertitle: 'Our Work - Global Water Blasting Lynfield, Auckland, NZ',
+    twittertitle: 'Our Work - Water Blasting Services Lynfield, Auckland Region, NZ',
     twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
     twitterdescription: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homesy',
     twitterimagealt: 'Globalwaterblastinglogo'
