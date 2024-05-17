@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
   let seo = {
     title: 'About Us - Water Blasting Services In Auckland Region NZ',
-    description: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.!',
+    description: 'Global Water Blasting makes home exterior washing easy by employing the right methods. Our experienced staff is trained to refresh your house exteriors.',
     canonical: 'https://globalwaterblasting.co.nz/aboutus',
     ogtype: 'article',
     ogtitle: 'About Us - Water Blasting Services In Auckland Region NZ',

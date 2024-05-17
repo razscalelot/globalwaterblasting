@@ -14,7 +14,7 @@ apiKey.apiKey = process.env.SIB_API_KEY;
 router.get('/', function (req, res, next) {
   let seo = {
     title: 'Our Work - Water Blasting Services Lynfield, Auckland Region, NZ',
-    description: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homesy!',
+    description: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homes.',
     canonical: 'https://globalwaterblasting.co.nz/ourwork',
     ogtype: 'article',
     ogtitle: 'Our Work - Water Blasting Services Lynfield, Auckland Region, NZ',
@@ -28,7 +28,7 @@ router.get('/', function (req, res, next) {
     twittersite: '@https://globalwaterblasting.co.nz/ourwork',
     twittertitle: 'Our Work - Water Blasting Services Lynfield, Auckland Region, NZ',
     twitterimage: 'https://globalwaterblasting.co.nz/assets/images/logo.png',
-    twitterdescription: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homesy',
+    twitterdescription: 'Our Work at Global Water Blasting is to make your home exteriors glow like new. We use the best methods and eco-friendly products while washing homes.',
     twitterimagealt: 'Globalwaterblastinglogo'
   }
   res.render('front/app/ourwork', { seo: seo, title: 'Our Work || Global Water Blasting', message: req.flash('message'), AWS_BUCKET_URI: process.env.AWS_BUCKET_URI, page : 'ourwork' });
