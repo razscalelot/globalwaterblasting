@@ -35,7 +35,7 @@
         <div class="flex flex-wrap items-stretch justify-center sm:justify-normal  -mx-3 -mb-10 mt-5 md:mt-0">
             <div ng-repeat="service in services" class="sm:w-1/2 md:w-1/3 px-3 py-4 md:py-6 lg:py-8 xl:py-10" data-aos="zoom-in" data-aos-duration="1500">
                 <div class="max-w-[374px] w-full mx-auto xl:mx-0 xl:mr-auto">
-                    <a href="/servicedetails?name={{service.serviceslug}}" class="block space-y-3 xl:space-y-5">
+                    <a href="/service/{{service.servicepagename}}" class="block space-y-3 xl:space-y-5">
                         <img src="<%= AWS_BUCKET_URI %>{{service.image}}" alt="{{service.servicename}}" class="w-full object-cover rounded-3xl h-full min-h-[319px] md:min-h-[280px] lg:min-h-[319px]">
                         <h3 class="text-center whitespace-nowrap">
                           {{service.servicename}}
