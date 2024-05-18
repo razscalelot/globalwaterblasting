@@ -4,8 +4,6 @@ const mongoConnection = require('../../utilities/connections');
 const constants = require('../../utilities/constants');
 const serviceModel = require('../../models/services.model');
 const responseManager = require('../../utilities/response.manager');
-const mongoConnection = require('../../utilities/connections');
-const constants = require('../../utilities/constants');
 const quoteModel = require("../../models/quotes.model");
 
 /* GET home page. */
