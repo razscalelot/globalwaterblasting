@@ -79,7 +79,7 @@ router.post('/', async (req, res) => {
           }).then((response) => {
             req.flash('message', 'Your message has been successfully sent. We will contact you very soon!');
             res.redirect('/servicedetails?name=' + redirect);
-         + }).catch((error) => {
+          }).catch((error) => {
             req.flash('message', error);
             res.redirect('/servicedetails?name=' + redirect);
           });
