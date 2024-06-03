@@ -64,7 +64,8 @@
                         <p class="footer_m_titel">Services</p>
                         <ul class="mt-2 md:mt-3 lg:mt-8 space-y-2.5 md:space-y-3.5 text-sm">
                             <li ng-repeat="service in services">
-                                <a class="footer_menu" href="/servicedetails?name={{service.serviceslug}}">{{service.servicename}}</a>
+                                <a class="footer_menu" href="/services/{{service.servicepagename}}">{{service.servicename}}</a>
+                                <!-- <a href="/services/{{service.servicepagename}}"></a> -->
                             </li>
                         </ul>
                     </div>
@@ -86,7 +87,7 @@
                         <p class="footer_m_titel">Contact Info</p>
                         <ul class="mt-2 md:mt-3 lg:mt-8 space-y-2.5 md:space-y-3.5 text-sm">
                             <li>
-                                <a class="footer_menu flex space-x-2" href="#">
+                                <span class="footer_menu flex space-x-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -94,10 +95,10 @@
                                             fill="#005FAE" />
                                     </svg>
                                     <span>We provide services in the entire Auckland region.</span>
-                                </a>
+                                </span>
                             </li>
                             <li>
-                                <a class="footer_menu flex space-x-2" href="#">
+                                <span class="footer_menu flex space-x-2">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -105,10 +106,10 @@
                                             fill="#005FAE" />
                                     </svg>
                                     <span>+64223514444</span>
-                                </a>
+                                </span>
                             </li>
                             <li>
-                                <a class="footer_menu flex space-x-2" href="#">
+                                <span class="footer_menu flex space-x-2">
                                     <div class="flex items-center space-x-2">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +119,7 @@
                                         </svg>
                                     </div>
                                     <span mailto:class="">globalwaterblasting@gmail.com</span>
-                                </a>
+                                </span>
                             </li>
                         </ul>
                     </div>
