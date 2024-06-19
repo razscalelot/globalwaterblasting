@@ -1,12 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./../public/assets/images/logo.png" rel="shortcut icon" />
+  <title>404</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  section{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .contner{
+    width: 100%;
+    max-width: 767px;
+    padding: 60px 20px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contner h1{
+    font-size: 120px;
+    line-height: 130px;
+    letter-spacing: -.025em;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #003687;
+  }
+  .contner span{
+    font-size: 46px;
+    display: block;
+    line-height: 56px;
+    font-weight: 900;
+    color: #141414;
+  }
+  .contner p{
+    font-size: 22px;
+    line-height: 36px;
+    margin-top: 10px;
+  }
+  .contner a {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #003687;
+    background-color: #003687;
+    transition: 0.3s all ease-in-out;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .contner a:hover {
+    background: #fff;
+    color: #003687;
+  }
 
-
-<section class="bg-white dark:bg-gray-900 flex items-center min-h-screen">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-      <div class="mx-auto max-w-screen-sm text-center">
-          <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-[#003687]">404</h1>
-          <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">Something's missing.</p>
-          <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">Sorry, we can't find that page. You'll find lots to explore on the home page. </p>
-          <a href="#" class="inline-flex text-white bg-[#003687] hover:bg-white border border-[#003687] hover:text-[#003687] anim outline-none font-medium rounded-lg text-sm px-5 py-3 text-center my-4">Back to Homepage</a>
-      </div>   
-  </div>
-</section>
+@media (max-width: 767px){
+  .contner p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .contner span {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .contner h1 {
+    font-size: 90px;
+    line-height: 100px;
+    margin-bottom: 10px;
+  }
+}
+</style>
+<body>
+  <section class="bg-white dark:bg-gray-900 flex items-center min-h-screen">
+        <div class="contner">
+            <h1>404</h1>
+            <span>Something's missing.</span>
+            <p>Sorry, we can't find that page. You'll find lots to explore on the home page. </p>
+            <a href="https://globalwaterblasting.co.nz/">Back to Homepage</a>
+        </div>   
+  </section>
+</body>
+</html>
