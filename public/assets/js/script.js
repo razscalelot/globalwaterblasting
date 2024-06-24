@@ -66,32 +66,37 @@ var swiper = new Swiper(".mySwiper", {
     },
   },
 });
+
 var swiper = new Swiper(".ourWork-swiper", {
   slidesPerView: 1,
   spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
   navigation: {
-    nextEl: '.next',
-    prevEl: '.prev',
+    nextEl: ".next",
+    prevEl: ".prev",
   },
   breakpoints: {
-    425: {
+    640: {
       slidesPerView: 2,
       spaceBetween: 15,
     },
-    640: {
+    768: {
       slidesPerView: 3,
       spaceBetween: 15,
     },
-    1440: {
+    1024: {
       slidesPerView: 4,
       spaceBetween: 25,
     },
   },
 });
+
 var swiper = new Swiper(".mySwiper2", {
   slidesPerView: 1,
   spaceBetween: 30,
-  loop:true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -100,8 +105,8 @@ var swiper = new Swiper(".mySwiper2", {
     reverseDirection:false,
   },
   navigation: {
-    nextEl: '.next',
-    prevEl: '.prev',
+    nextEl: ".next",
+    prevEl: ".prev",
   },
   breakpoints: {
     640: {
@@ -109,7 +114,7 @@ var swiper = new Swiper(".mySwiper2", {
       spaceBetween: 15,
     },
     768: {
-      slidesPerView: 2,
+      slidesPerView: 32,
       spaceBetween: 30,
     },
     1024: {
@@ -118,6 +123,7 @@ var swiper = new Swiper(".mySwiper2", {
     },
   },
 });
+
 var swiper = new Swiper(".mySwiper3", {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -132,7 +138,7 @@ var swiper = new Swiper(".mySwiper3", {
 const container = document.querySelector('.container');
 document.querySelector('.slider').addEventListener('input', (e) => {
   container.style.setProperty('--position', `${e.target.value}%`);
-})
+});
 
 // Slider change Images
 
@@ -174,4 +180,4 @@ document.getElementById('roof_washing').addEventListener('click', function(){
 });
 document.getElementById('deckWashing').addEventListener('click', function(){
   changeImage("deckWashing");
-})
+});
