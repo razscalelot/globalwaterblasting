@@ -84,7 +84,7 @@ var swiper = new Swiper(".ourWork-swiper", {
     },
     1440: {
       slidesPerView: 4,
-      spaceBetween: 24,
+      spaceBetween: 25,
     },
   },
 });
@@ -114,7 +114,7 @@ var swiper = new Swiper(".mySwiper2", {
     },
     1024: {
       slidesPerView: 3,
-      spaceBetween: 40,
+      spaceBetween: 30,
     },
   },
 });
